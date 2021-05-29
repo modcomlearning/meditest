@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".NewHome">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Who is this test for"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:textSize="30dp"
+        android:layout_marginTop="30dp"
+        android:textColor="#000000"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_self"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Self"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/bg_select"
+        android:textStyle="bold"
+        android:textColor="@color/white"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_others"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Others"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/bg_select"
+        android:textStyle="bold"
+        android:textColor="@color/white"/>
+
+</LinearLayout>

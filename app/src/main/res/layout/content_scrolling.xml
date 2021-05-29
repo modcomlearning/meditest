@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".TestDescActivity"
+    tools:showIn="@layout/activity_test_desc">
+
+
+     <LinearLayout
+         android:id="@+id/linearLayout"
+         android:layout_width="match_parent"
+         android:orientation="vertical"
+         android:layout_height="match_parent">
+
+         <TextView
+             android:id="@+id/info_head"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:textSize="20dp"
+             android:textStyle="bold"
+             android:layout_marginLeft="10dp"
+             android:layout_marginBottom="10dp"
+             android:textColor="@color/medi_button"
+             android:text="Test Information" />
+
+
+       <TextView
+        android:id="@+id/test_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:layout_marginLeft="10dp"
+        android:text="" />
+
+
+         <TextView
+             android:id="@+id/test_desc"
+             android:typeface="sans"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:layout_marginLeft="10dp"
+             android:layout_marginBottom="10dp"
+             android:text="" />
+
+         <TextView
+             android:id="@+id/const_head"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:textStyle="bold"
+             android:layout_marginLeft="10dp"
+             android:text="Test Constituents" />
+
+       <TextView
+           android:id="@+id/test_constituents"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:layout_marginLeft="10dp"
+           android:layout_marginBottom="10dp"
+           android:text="" />
+
+
+       <TextView
+           android:id="@+id/cat_head"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:textStyle="bold"
+             android:layout_marginLeft="10dp"
+             android:text="Test Category" />
+
+         <TextView
+             android:id="@+id/test_category"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:layout_marginLeft="10dp"
+             android:layout_marginBottom="10dp"
+             android:text="" />
+
+
+
+         <TextView
+             android:id="@+id/pre_head"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:textStyle="bold"
+             android:layout_marginLeft="10dp"
+             android:text="Test Prerequisites" />
+
+
+         <TextView
+             android:id="@+id/test_prerequisites"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:layout_marginLeft="10dp"
+             android:layout_marginBottom="10dp"
+             android:text="" />
+
+
+         <TextView
+             android:id="@+id/report_head"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:textStyle="bold"
+             android:layout_marginLeft="10dp"
+             android:text="Report Availability" />
+
+
+         <TextView
+             android:id="@+id/test_report"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:layout_marginLeft="10dp"
+             android:layout_marginBottom="10dp"
+             android:text="" />
+
+         <TextView
+             android:id="@+id/price_head"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:textStyle="bold"
+             android:layout_marginLeft="10dp"
+             android:text="Price(KES)" />
+
+         <TextView
+             android:id="@+id/test_price"
+             android:layout_width="match_parent"
+             android:textStyle="bold"
+             android:textColor="@android:color/holo_green_dark"
+             android:textSize="20dp"
+             android:layout_height="wrap_content"
+             android:layout_marginLeft="10dp"
+             android:layout_marginBottom="10dp"
+             android:text="" />
+
+
+         <TextView
+             android:id="@+id/status"
+             android:layout_width="match_parent"
+             android:textStyle="bold"
+             android:textSize="18dp"
+             android:layout_height="wrap_content"
+             android:layout_marginLeft="10dp"
+             android:text="" />
+
+
+       <androidx.appcompat.widget.AppCompatButton
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_marginTop="10dp"
+           android:layout_marginLeft="10dp"
+           android:text="SELECT THIS TEST"
+           android:textColor="#fff"
+           android:layout_gravity="center"
+           android:background = "@drawable/bg_select"
+           android:id="@+id/buy" />
+
+     </LinearLayout>
+
+
+</androidx.core.widget.NestedScrollView>

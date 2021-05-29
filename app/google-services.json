@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "257192716864",
+    "project_id": "meditest-8566d",
+    "storage_bucket": "meditest-8566d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:257192716864:android:e85de91040240a64394da5",
+        "android_client_info": {
+          "package_name": "com.modcom.meditest"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "257192716864-r9c5p9ape02ijbgss16lorlhchrko3k3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBGb1_Zg4VmbWgOAyesLi0-TNN7Meh9X3I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "257192716864-r9c5p9ape02ijbgss16lorlhchrko3k3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

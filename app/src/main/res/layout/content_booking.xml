@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".TestDescActivity"
+    tools:showIn="@layout/activity_confirm_booking">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="10dp"
+            android:text="Booking Information" />
+
+
+        <TextView
+            android:id="@+id/booking_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:layout_marginLeft="10dp"
+            android:text="" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:layout_marginLeft="10dp"
+            android:text="Patient Name:" />
+
+        <TextView
+            android:id="@+id/patient_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:textColor="#4CAF50"
+            android:layout_marginBottom="10dp"
+            android:text="" />
+
+
+        <TextView
+            android:id="@+id/title_relationship"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:layout_marginLeft="10dp"
+            android:text="Relationship" />
+
+        <TextView
+            android:id="@+id/patient_relationship"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="10dp"
+            android:text="" />
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnUploadPres"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="7dp"
+            android:layout_centerVertical="true"
+            android:layout_weight="1"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/bg_select"
+            android:textStyle="bold"
+            android:textColor="@android:color/white"
+            android:padding="10dp"
+            android:text=" Upload Prescription "
+            />
+
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:layout_marginLeft="10dp"
+            android:text="Laboratory Tests" />
+
+
+        <TableRow
+            android:paddingTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="7dp"
+            android:layout_marginRight="7dp"
+            android:layout_weight="1">
+
+            <TextView
+                android:layout_weight=".7"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Lab Tests"
+                android:gravity="left"
+                android:layout_marginLeft="4dp"
+                android:layout_marginRight="4dp"
+                android:background="#c5c5c5" />
+
+            <TextView
+                android:layout_weight=".3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:text="Price(KES)"
+                android:layout_marginRight="4dp"
+                android:background="#c5c5c5" />
+
+
+        </TableRow>
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/recycler"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+          />
+
+
+        <TextView
+            android:id="@+id/laboratory_tests"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:layout_marginLeft="10dp"
+            android:textStyle="bold"
+            android:textColor="#FF5722"
+            android:layout_marginRight="15dp"
+            android:layout_marginBottom="10dp"
+            android:text="" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnLocation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/bg_select"
+            android:textStyle="bold"
+            android:layout_marginTop="6dp"
+            android:textColor="@android:color/white"
+            android:padding="10dp"
+            android:text="Get Current Location"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="10dp"
+            android:text="Schedule  Booking" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center_vertical|center_horizontal"
+        android:orientation="horizontal">
+
+
+    <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnDatebooking"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_select"
+            android:textStyle="bold"
+            android:textColor="@android:color/white"
+            android:padding="10dp"
+            android:text="Select Date"
+            />
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnTimebooking"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="10dp"
+            android:layout_centerVertical="true"
+            android:layout_weight="1"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/bg_select"
+            android:textStyle="bold"
+            android:textColor="@android:color/white"
+            android:padding="10dp"
+            android:text="Select Time"
+            />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center_vertical|center_horizontal"
+        android:orientation="horizontal">
+        <EditText
+            android:id="@+id/tvSelectedDateBooking"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            android:enabled="false"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+
+        <EditText
+            android:id="@+id/tvSelectedTimeBooking"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginLeft="10dp"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            android:enabled="false"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+
+        <!--  Name Label -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="8dp">
+            <EditText android:id="@+id/book_phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="phone"
+                android:hint="Phone Number 2547xxx" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+            <EditText android:id="@+id/book_address"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="2dp"
+                android:inputType="textMultiLine"
+                android:hint="Location description i.e house No, street, building" />
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:textSize="15dp"
+            android:text="CONFIRM BOOKING"
+            android:background="@drawable/bg_select"
+            android:textStyle="bold"
+            android:layout_marginBottom="10dp"
+            android:padding="10dp"
+            android:textColor="#fff"
+            android:id="@+id/book" />
+
+    </LinearLayout>
+
+
+</androidx.core.widget.NestedScrollView>

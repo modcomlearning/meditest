@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="109dp"
+    app:layout_constraintBottom_toTopOf="@+id/txt_book_amount"
+    app:layout_constraintTop_toTopOf="@+id/txt_book_amount">
+
+    <TextView
+        android:id="@+id/txt_time"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="53dp"
+        android:layout_marginRight="53dp"
+        android:layout_marginBottom="17dp"
+        android:gravity="center"
+        android:src="@drawable/ic_launcher_background"
+        android:text="10.30AM"
+        android:textSize="18dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/txt_book_amount"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_date"
+        app:layout_constraintWidth_percent=".3" />
+
+    <TextView
+        android:id="@+id/txt_paid"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="19dp"
+        android:background="@drawable/bg_rounded"
+        android:fontFamily="sans-serif"
+        android:gravity="center"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:text="Paid"
+        android:textColor="#ffffff"
+        android:textSize="13sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/txt_book_amount"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/txt_date"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txt_book_amount"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"
+        android:fontFamily="sans-serif"
+        android:gravity="center"
+        android:text="Total. Ksh 20000"
+        android:textColor="#2196F3"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/txt_time"
+        app:layout_constraintTop_toBottomOf="@+id/txt_paid" />
+
+    <TextView
+        android:id="@+id/txt_date"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="9dp"
+        android:layout_marginLeft="9dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginEnd="43dp"
+        android:layout_marginRight="43dp"
+        android:layout_marginBottom="12dp"
+        android:gravity="left"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:text="2020-02-05"
+        android:textSize="15dp"
+        app:layout_constraintBottom_toTopOf="@+id/txt_time"
+        app:layout_constraintEnd_toStartOf="@+id/txt_paid"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

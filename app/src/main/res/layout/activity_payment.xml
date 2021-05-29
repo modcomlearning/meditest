@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Payment">
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        tools:context=".TestDescActivity"
+        android:fitsSystemWindows="true"
+        tools:ignore="MissingConstraints">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="56dp"
+            android:paddingLeft="24dp"
+            android:paddingRight="24dp">
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Pay Via MPESA"
+                android:textSize="25dp"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:layout_marginLeft="15dp"
+                android:textColor="@color/colorMed"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Amount Payable"
+                android:textSize="15dp"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:layout_marginLeft="15dp"
+                android:textColor="#000000"
+                />
+
+            <!--  Name Label -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp">
+
+                <EditText android:id="@+id/amount_to_pay"
+                    android:enabled="false"
+                    android:textStyle="bold"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textCapWords"
+                    android:hint="" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Email Label -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp">
+
+                <EditText android:id="@+id/phone_to_pay"
+                    android:layout_width="match_parent"
+                    android:enabled="true"
+                    android:layout_height="wrap_content"
+                    android:inputType="textEmailAddress"
+                    android:hint="Your Phone Number 2547xx" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+
+            <!-- Signup Button -->
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_makepayment"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="24dp"
+                android:padding="12dp"
+                android:enabled="true"
+                android:background="@drawable/bg_select"
+                android:textStyle="bold"
+                android:textColor="@android:color/white"
+                android:text="Make Payment Via MPESA"/>
+
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:id="@+id/paylater"
+                android:layout_height="wrap_content"
+                android:text="Skip. Pay Later."
+                android:textSize="22dp"
+                android:textStyle="bold"
+                android:clickable="true"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:layout_marginLeft="15dp"
+                android:textColor="@color/colorMed"
+                />
+
+
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

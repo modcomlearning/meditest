@@ -1,0 +1,16 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.modcom.meditest.NewMainPage">
+    <item
+        android:id="@+id/view_booking"
+        android:orderInCategory="100"
+        android:title="VIEW MY BOOKINGS"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/action_logout"
+        android:orderInCategory="100"
+        android:title="Logout"
+        app:showAsAction="never" />
+</menu>
