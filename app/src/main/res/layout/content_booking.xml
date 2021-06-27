@@ -69,19 +69,18 @@
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnUploadPres"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:layout_marginLeft="10dp"
+            android:layout_marginLeft="20dp"
             android:layout_marginTop="5dp"
             android:layout_marginBottom="7dp"
             android:layout_centerVertical="true"
             android:layout_weight="1"
-            android:layout_marginRight="10dp"
-            android:background="@drawable/bg_select"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/white_button"
             android:textStyle="bold"
-            android:textColor="@android:color/white"
-            android:padding="10dp"
+            android:textColor="@android:color/black"
             android:text=" Upload Prescription "
             />
 
@@ -148,20 +147,35 @@
             android:layout_marginBottom="10dp"
             android:text="" />
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:id="@+id/txtlocset"
+            android:textColor="#4CAF50"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp"
+            android:text="" />
+
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnLocation"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
-            android:layout_marginLeft="10dp"
-            android:background="@drawable/bg_select"
+            android:layout_marginLeft="15dp"
+            android:background="@drawable/white_button"
             android:textStyle="bold"
+            android:layout_marginRight="10dp"
             android:layout_marginTop="6dp"
-            android:textColor="@android:color/white"
+            android:textColor="@android:color/black"
             android:padding="10dp"
-            android:text="Get Current Location"
+            android:text="Add Your Location"
             />
+
+
+
+
 
         <TextView
             android:layout_width="match_parent"
@@ -187,9 +201,9 @@
             android:layout_centerVertical="true"
             android:layout_marginLeft="10dp"
             android:layout_weight="1"
-            android:background="@drawable/bg_select"
+            android:background="@drawable/white_button"
             android:textStyle="bold"
-            android:textColor="@android:color/white"
+            android:textColor="@android:color/black"
             android:padding="10dp"
             android:text="Select Date"
             />
@@ -204,9 +218,9 @@
             android:layout_centerVertical="true"
             android:layout_weight="1"
             android:layout_marginRight="10dp"
-            android:background="@drawable/bg_select"
+            android:background="@drawable/white_button"
             android:textStyle="bold"
-            android:textColor="@android:color/white"
+            android:textColor="@android:color/black"
             android:padding="10dp"
             android:text="Select Time"
             />
@@ -271,15 +285,15 @@
 
 
         <androidx.appcompat.widget.AppCompatButton
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:layout_marginLeft="10dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
             android:textSize="15dp"
             android:text="CONFIRM BOOKING"
             android:background="@drawable/bg_select"
             android:textStyle="bold"
-            android:layout_marginBottom="10dp"
             android:padding="10dp"
             android:textColor="#fff"
             android:id="@+id/book" />

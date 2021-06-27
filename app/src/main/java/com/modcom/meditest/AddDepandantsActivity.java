@@ -90,7 +90,7 @@ public class AddDepandantsActivity extends AppCompatActivity {
         selectDate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                DatePickerDialog datePickerDialog = new DatePickerDialog(AddDepandantsActivity.this,
+                DatePickerDialog datePickerDialog = new DatePickerDialog(AddDepandantsActivity.this,android.R.style.Theme_Holo_Dialog,
                         new DatePickerDialog.OnDateSetListener() {
                             @Override
                             public void onDateSet(DatePicker datePicker, int year, int monthOftheYear, int day) {
@@ -150,7 +150,6 @@ public class AddDepandantsActivity extends AppCompatActivity {
 
 
         //creating the json object to send
-
         JsonObject jsonObject = new JsonObject();
         jsonObject.addProperty("first_name",first_name.getText().toString());
         jsonObject.addProperty("sirname",sirname.getText().toString());

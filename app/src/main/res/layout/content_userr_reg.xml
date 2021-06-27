@@ -158,11 +158,11 @@
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnDate"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
-            android:background="@drawable/bg_select"
+            android:background="@drawable/grey_button"
             android:textStyle="bold"
             android:textColor="@android:color/white"
             android:padding="10dp"
@@ -196,10 +196,11 @@
             android:layout_height="wrap_content"
             android:clickable="true"
             android:textColor="#3F51B5"
+            android:textStyle="bold"
             android:layout_marginBottom="24dp"
             android:text="Already a member? Login"
             android:gravity="center"
-            android:textSize="16dip"/>
+            android:textSize="17dip"/>
 
     </LinearLayout>
 </ScrollView>

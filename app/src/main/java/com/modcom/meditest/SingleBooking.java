@@ -56,7 +56,7 @@ public class SingleBooking extends AppCompatActivity {
         setContentView(R.layout.activity_single_booking);
         shared = getSharedPreferences("mediprefs", MODE_PRIVATE);
         String booking_id = shared.getString("booking_id","");
-        Toast.makeText(this, ""+booking_id, Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, ""+booking_id, Toast.LENGTH_SHORT).show();
 
         btn_pay_now = findViewById(R.id.btn_make_pay_now);
         btn_pay_now.setVisibility(View.GONE);
@@ -193,6 +193,9 @@ public class SingleBooking extends AppCompatActivity {
                                     txt_contacts.setText(myArray.getString("phone"));
                                     txt_exact_location.setText(myArray.getString("address_desc"));
                                     txt_total_amount.setText("TOTAL KES. "+myArray.getString("total_amount"));
+                                    SharedPreferences.Editor editor = shared.edit();
+                                    editor.putString("amount", myArray.getString("total_amount"));
+                                    editor.apply();
                                }
                             } catch (JSONException e) {
                                 e.printStackTrace();

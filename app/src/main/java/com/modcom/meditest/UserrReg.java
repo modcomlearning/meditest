@@ -80,7 +80,7 @@ public class UserrReg extends AppCompatActivity {
         selectDate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                DatePickerDialog datePickerDialog = new DatePickerDialog(UserrReg.this,
+                DatePickerDialog datePickerDialog = new DatePickerDialog(UserrReg.this,android.R.style.Theme_Holo_Dialog,
                         new DatePickerDialog.OnDateSetListener() {
                             @Override
                             public void onDateSet(DatePicker datePicker, int year, int monthOftheYear, int day) {
@@ -102,6 +102,7 @@ public class UserrReg extends AppCompatActivity {
                                 date.setText(year + "-" + (formattedMonth) + "-" + formattedDayOfMonth);
                             }
                         }, year, month, dayOfMonth);
+
                 datePickerDialog.getDatePicker().setMaxDate(System.currentTimeMillis());
                 datePickerDialog.show();
             }

@@ -42,4 +42,10 @@
         android:textStyle="bold"
         android:textColor="@color/white"/>
 
+    <AdapterViewFlipper
+        android:id="@+id/adapterViewFlipper"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </AdapterViewFlipper>
 </LinearLayout>

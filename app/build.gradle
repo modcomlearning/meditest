@@ -12,8 +12,8 @@ android {
         applicationId "com.modcom.meditest"
         minSdkVersion 17
         targetSdkVersion 30
-        versionCode 3
-        versionName "3"
+        versionCode 6
+        versionName "6"
         multiDexEnabled true
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"

@@ -33,7 +33,7 @@
         android:layout_width="match_parent"
         android:layout_height="136dp"
         android:layout_alignParentBottom="true"
-        android:background="#F44336"
+        android:background="#455A64"
         android:gravity="center"
         android:orientation="horizontal">
 
@@ -41,7 +41,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
-            android:background="#F44336"
+            android:background="#455A64"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:orientation="vertical"
@@ -55,7 +55,7 @@
                 android:text="2 of 8 Items"
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:textColor="#ffffff"
-                android:textSize="20dp"
+                android:textSize="16dp"
                 android:textStyle="bold" />
 
             <TextView
@@ -65,7 +65,7 @@
                 android:text="Total Amount: $120.99"
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:textColor="#ffffff"
-                android:textSize="20dp"
+                android:textSize="15dp"
                 android:textStyle="bold" />
 
             <androidx.appcompat.widget.AppCompatButton
@@ -74,10 +74,12 @@
                 android:layout_height="wrap_content"
                 android:text="Proceeed to Checkout"
                 android:textStyle="bold"
-                android:textSize="18dp"
-                android:background = "@drawable/bg_select2"
+                android:textSize="15dp"
+
+                android:layout_marginTop="10dp"
+                android:background = "@drawable/bg_select"
                 android:textAppearance="?android:attr/textAppearanceSmall"
-                android:textColor="@android:color/black" />
+                android:textColor="@android:color/white" />
         </LinearLayout>
     </LinearLayout>
 

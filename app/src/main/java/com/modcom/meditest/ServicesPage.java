@@ -133,8 +133,7 @@ public class ServicesPage extends AppCompatActivity {
                 @Override
                 public void onResponse(Call<String> call, Response<String> response) {
                     dialog.dismiss();
-                    //Log.i("Responsestring", response.body().toString());
-                    //Toast.makeText()
+
                     try {
                         if (response.isSuccessful()) {
                             if (response.body() != null) {
@@ -180,7 +179,7 @@ public class ServicesPage extends AppCompatActivity {
                 @Override
                 public void onFailure(Call<String> call, Throwable t) {
                     dialog.dismiss();
-                    Log.d("error", t.getMessage());
+                    //Log.d("error", t.getMessage());
                     Toast.makeText(ServicesPage.this, "There was a server error, check your internet & try again", Toast.LENGTH_SHORT).show();
 
                     startActivity(new Intent(getApplicationContext(), NewMainPage.class));
@@ -227,7 +226,7 @@ public class ServicesPage extends AppCompatActivity {
 
         } catch (JSONException e) {
             AlertDialog alert = new AlertDialog.Builder(ServicesPage.this)
-                    .setTitle("Server Response Error!. Try again")
+                    .setTitle("Error!, Check your Internet. Try again")
                     .setPositiveButton("Ok",
                             new DialogInterface.OnClickListener() {
                                 public void onClick(DialogInterface dialog,

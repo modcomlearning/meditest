@@ -92,13 +92,12 @@ SharedPreferences shared;
         String phone = phone_to_pay.getText().toString();
 
         JsonObject jsonObject = new JsonObject();
-        jsonObject.addProperty("amount",  2);
+        jsonObject.addProperty("amount",  total_amount);
         jsonObject.addProperty("party_a",  phone);
         jsonObject.addProperty("account_ref",  "Mawingu");
         jsonObject.addProperty("trans_desc",  "Fine Payment");
-        jsonObject.addProperty("remarks",  "Payed via mpesa");
+        jsonObject.addProperty("remarks",  "Pay via mpesa");
         jsonObject.addProperty("booking_id",  booking_id);
-
 
 
         ServiceGenerator serviceGenerator  = new ServiceGenerator(getApplicationContext());

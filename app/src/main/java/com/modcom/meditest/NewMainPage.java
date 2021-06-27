@@ -20,6 +20,7 @@ import android.view.MenuItem;
 import android.view.View;
 
 import android.widget.AdapterView;
+import android.widget.AdapterViewFlipper;
 import android.widget.GridView;
 import android.widget.Toast;
 
@@ -27,10 +28,19 @@ import org.jetbrains.annotations.NotNull;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
+
 import adapters.GridAdapter;
+import offers.APIService;
+import offers.FlipperAdapter;
+import offers.FlipperMain;
+import offers.Hero;
+import offers.Heroes;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit_api.IRetrofit;
 import services.ServiceGenerator;
 
@@ -44,9 +54,16 @@ public class NewMainPage extends AppCompatActivity {
     };
 
     Integer[] imgid={
-            R.mipmap.doc5, R.mipmap.doc1, R.mipmap.doc2,
-            R.mipmap.doc3
+            R.drawable.laboratory, R.drawable.pharmacy, R.drawable.consult,
+            R.drawable.home
     };
+
+
+    //the base url
+    public static final String BASE_URL = "https://www.simplifiedcoding.net/demos/view-flipper/";
+
+    //adapterviewflipper object
+    private AdapterViewFlipper adapterViewFlipper;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -78,7 +95,8 @@ public class NewMainPage extends AppCompatActivity {
                 else if(position == 1) {
                     //code specific to 2nd list item
                    // throw new RuntimeException("Test Crash");
-                   Toast.makeText(getApplicationContext(),"Coming Soon",Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(getApplicationContext(), FlipperMain.class));
+                   //Toast.makeText(getApplicationContext(),"Coming Soon",Toast.LENGTH_SHORT).show();
                 }
 
                 else if(position == 2) {
@@ -91,6 +109,46 @@ public class NewMainPage extends AppCompatActivity {
                 }
 
 
+            }
+        });
+
+
+        //Flipper
+        //getting adapterviewflipper
+        adapterViewFlipper = (AdapterViewFlipper) findViewById(R.id.adapterViewFlipper);
+
+        //building retrofit object
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(BASE_URL)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+
+        //Defining retrofit api service
+        APIService service = retrofit.create(APIService.class);
+
+        //creating an api call
+        Call<Heroes> call =  service.getHeroes();
+
+        //making the call
+        call.enqueue(new Callback<Heroes>() {
+            @Override
+            public void onResponse(Call<Heroes> call, Response<Heroes> response) {
+
+                //getting list of heroes
+                ArrayList<Hero> heros = response.body().getHeros();
+
+                //creating adapter object
+                FlipperAdapter adapter = new FlipperAdapter(getApplicationContext(), heros);
+
+                //adding it to adapterview flipper
+                adapterViewFlipper.setAdapter(adapter);
+                adapterViewFlipper.setFlipInterval(5000);
+                adapterViewFlipper.startFlipping();
+            }
+
+            @Override
+            public void onFailure(Call<Heroes> call, Throwable t) {
+                Toast.makeText(getApplicationContext(), "This App Requires Internet Connection", Toast.LENGTH_LONG).show();
             }
         });
     }

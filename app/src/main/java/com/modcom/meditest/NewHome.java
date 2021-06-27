@@ -9,7 +9,21 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterViewFlipper;
 import android.widget.Button;
+import android.widget.Toast;
+
+import java.util.ArrayList;
+
+import offers.APIService;
+import offers.FlipperAdapter;
+import offers.Hero;
+import offers.Heroes;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 //this page is accessed when some one logs in
 public class NewHome extends AppCompatActivity {
@@ -18,6 +32,12 @@ public class NewHome extends AppCompatActivity {
     Button btn_others;
     String email_pref;
     String password_pref;
+
+    //the base url
+    public static final String BASE_URL = "https://www.simplifiedcoding.net/demos/view-flipper/";
+
+    //adapterviewflipper object
+    private AdapterViewFlipper adapterViewFlipper;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,6 +67,45 @@ public class NewHome extends AppCompatActivity {
                 //if others go to others activity
                 Intent x = new Intent(getApplicationContext() , Others.class);
                 startActivity(x);
+            }
+        });
+
+        //Flipper
+        //getting adapterviewflipper
+        adapterViewFlipper = (AdapterViewFlipper) findViewById(R.id.adapterViewFlipper);
+
+        //building retrofit object
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(BASE_URL)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+
+        //Defining retrofit api service
+        APIService service = retrofit.create(APIService.class);
+
+        //creating an api call
+        Call<Heroes> call =  service.getHeroes();
+
+        //making the call
+        call.enqueue(new Callback<Heroes>() {
+            @Override
+            public void onResponse(Call<Heroes> call, Response<Heroes> response) {
+
+                //getting list of heroes
+                ArrayList<Hero> heros = response.body().getHeros();
+
+                //creating adapter object
+                FlipperAdapter adapter = new FlipperAdapter(getApplicationContext(), heros);
+
+                //adding it to adapterview flipper
+                adapterViewFlipper.setAdapter(adapter);
+                adapterViewFlipper.setFlipInterval(5000);
+                adapterViewFlipper.startFlipping();
+            }
+
+            @Override
+            public void onFailure(Call<Heroes> call, Throwable t) {
+                Toast.makeText(getApplicationContext(), "This App Requires Internet Connection", Toast.LENGTH_LONG).show();
             }
         });
 

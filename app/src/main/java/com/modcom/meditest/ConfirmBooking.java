@@ -648,4 +648,18 @@ public class ConfirmBooking extends AppCompatActivity {
         }
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        TextView txtlocset = findViewById(R.id.txtlocset);
+        String lat = shared.getString("lat", "");
+        String lon = shared.getString("lon", "");
+        if (lat.length()==0 || lon.length() ==0){
+            txtlocset.setText("Location Not Specified, Click button below");
+        }
+
+        else {
+            txtlocset.setText("Previous Location Specified, Click button to change");
+        }
+    }
 }

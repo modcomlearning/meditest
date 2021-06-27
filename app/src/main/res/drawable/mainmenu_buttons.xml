@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_pressed="true" >
+        <shape
+            android:shape="rectangle" android:padding="10dp" >
+            <corners android:radius="10dp" />
+            <solid android:color="#878B8E" />
+        </shape>
+    </item>
+    <item>
+        <shape
+            android:shape="rectangle" android:padding="10dp" >
+            <corners android:radius="10dp" />
+            <solid android:color="#B4B7B8" />
+
+            <gradient
+                android:angle="270"
+                android:centerColor="@color/medi_button"
+                android:endColor="#F44336"
+                android:startColor="#F19F95" />
+        </shape>
+    </item>
+</selector>

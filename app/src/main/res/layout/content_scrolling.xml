@@ -19,11 +19,11 @@
              android:id="@+id/info_head"
              android:layout_width="match_parent"
              android:layout_height="wrap_content"
-             android:textSize="20dp"
+             android:textSize="17dp"
              android:textStyle="bold"
              android:layout_marginLeft="10dp"
              android:layout_marginBottom="10dp"
-             android:textColor="@color/medi_button"
+             android:textColor="#FF5722"
              android:text="Test Information" />
 
 
@@ -31,7 +31,8 @@
         android:id="@+id/test_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="20dp"
+        android:textSize="18dp"
+           android:textStyle="bold"
         android:layout_marginLeft="10dp"
         android:text="" />
 
@@ -50,6 +51,7 @@
              android:layout_width="match_parent"
              android:layout_height="wrap_content"
              android:textStyle="bold"
+             android:textColor="#FF5722"
              android:layout_marginLeft="10dp"
              android:text="Test Constituents" />
 
@@ -68,6 +70,7 @@
              android:layout_height="wrap_content"
              android:textStyle="bold"
              android:layout_marginLeft="10dp"
+           android:textColor="#FF5722"
              android:text="Test Category" />
 
          <TextView
@@ -86,6 +89,7 @@
              android:layout_height="wrap_content"
              android:textStyle="bold"
              android:layout_marginLeft="10dp"
+             android:textColor="#FF5722"
              android:text="Test Prerequisites" />
 
 
@@ -146,10 +150,11 @@
 
 
        <androidx.appcompat.widget.AppCompatButton
-           android:layout_width="wrap_content"
+           android:layout_width="match_parent"
            android:layout_height="wrap_content"
            android:layout_marginTop="10dp"
            android:layout_marginLeft="10dp"
+           android:layout_marginRight="10dp"
            android:text="SELECT THIS TEST"
            android:textColor="#fff"
            android:layout_gravity="center"

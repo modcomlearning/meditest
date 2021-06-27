@@ -1,7 +1,5 @@
 package com.modcom.meditest;
 
-
-
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
@@ -55,7 +53,6 @@ public class MyBookings extends AppCompatActivity {
         setContentView(R.layout.activity_my_bookings);
 
         recyclerView = findViewById(R.id.recycler);
-
         // etsearch = (EditText) findViewById(R.id.editText);
         swipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.swipeRefreshLayout);
         shared = getSharedPreferences("mediprefs", MODE_PRIVATE);
@@ -66,7 +63,6 @@ public class MyBookings extends AppCompatActivity {
     }
 
     private void fetchJSON(){
-
         try {
         ProgressDialog dialog = new ProgressDialog(MyBookings.this);
         dialog.setTitle("Retrieving Your Bookings..");
@@ -109,8 +105,6 @@ public class MyBookings extends AppCompatActivity {
                 //Toast.makeText()
                 dialog.dismiss();
                 try {
-
-
                     if (response.isSuccessful()) {
                         if (response.body() != null) {
                             dialog.dismiss();
@@ -133,10 +127,6 @@ public class MyBookings extends AppCompatActivity {
                         startActivity(new Intent(getApplicationContext(), NewMainPage.class));
                         finish();
                     }
-
-
-
-
 
 
                 }catch (Exception s){
@@ -173,8 +163,6 @@ public class MyBookings extends AppCompatActivity {
 
 
                 Toast.makeText(MyBookings.this, "There was a server error, try again", Toast.LENGTH_SHORT).show();
-
-
             }
         });
 
@@ -185,16 +173,13 @@ public class MyBookings extends AppCompatActivity {
     }
 
     private void writeRecycler(String response){
-
         try {
             //getting the whole json object from the response
             JSONObject obj = new JSONObject(response);
             //if(obj.optString("status").equals("true")){
             ArrayList<BookingModel> modelRecyclerArrayList = new ArrayList<>();
             // Log.d("hey", obj.toString());
-
             //else {
-
                 JSONArray dataArray  = obj.getJSONArray("data");
 
             if (dataArray.isNull(0)) {
@@ -216,7 +201,6 @@ public class MyBookings extends AppCompatActivity {
             }
 
             else {
-
                 for (int i = 0; i < dataArray.length(); i++) {
                     BookingModel modelRecycler = new BookingModel();
                     JSONObject dataobj = dataArray.getJSONObject(i);
@@ -257,8 +241,5 @@ public class MyBookings extends AppCompatActivity {
                             }).show();
             alert.setCanceledOnTouchOutside(false);
         }
-
     }
-
-
 }

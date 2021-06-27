@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
@@ -82,7 +83,7 @@ public class ChangePassword extends AppCompatActivity {
                         try {
                             dialog.dismiss();
                             //here we handle the responses in JSOn
-                            Toast.makeText(ChangePassword.this, "OK"+response.body().toString(), Toast.LENGTH_SHORT).show();
+                            //Toast.makeText(ChangePassword.this, "OK"+response.body().toString(), Toast.LENGTH_SHORT).show();
                             if (response.isSuccessful()) {
                                 if (response.body() != null) {
                                     // Toast.makeText(ServicesPage.this, "Success", Toast.LENGTH_SHORT).show();
@@ -109,9 +110,21 @@ public class ChangePassword extends AppCompatActivity {
                                        // Toast.makeText(ChangePassword.this, ""+dataArray.toString(), Toast.LENGTH_SHORT).show();
                                     }
 
+                                    else if (obj.has("message")) {
+                                        JSONArray dataArray = obj.getJSONArray("message");
+                                        textInputLayout1.setError(dataArray.toString());
+                                        // Toast.makeText(ChangePassword.this, ""+dataArray.toString(), Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(ChangePassword.this, "Password Changed", Toast.LENGTH_LONG).show();
+//
+                                        startActivity(new Intent(getApplicationContext(), UserLogin.class));
+                                        finish();
+                                    }
+
                                     else {
                                         dialog.dismiss();
-                                        Toast.makeText(ChangePassword.this, "Password Changed", Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(ChangePassword.this, "There was an error! , Retry or Contact Admin", Toast.LENGTH_LONG).show();
+                                        startActivity(new Intent(getApplicationContext(), UserLogin.class));
+                                        finish();
 //
                                     }
                                     //here

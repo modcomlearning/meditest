@@ -2,6 +2,7 @@ package com.modcom.meditest
 
 import android.Manifest
 import android.content.Context
+import android.content.Intent
 import android.content.SharedPreferences
 import android.content.pm.PackageManager
 import android.location.Address
@@ -9,6 +10,7 @@ import android.location.Geocoder
 import android.location.Location
 import android.os.Build
 import android.os.Bundle
+import android.provider.Settings
 import android.view.View
 import android.widget.EditText
 import android.widget.Toast
@@ -48,7 +50,7 @@ class Maps1Activity() : FragmentActivity(), OnMapReadyCallback, LocationListener
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_maps1)
-
+        progress.visibility = View.GONE
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         val mapFragment = supportFragmentManager
@@ -243,6 +245,36 @@ class Maps1Activity() : FragmentActivity(), OnMapReadyCallback, LocationListener
         alertDialog.show()
     }
 
+    fun needHelp(view: View) {
+        val builder = AlertDialog.Builder(this)
+        //set title for alert dialog
+        builder.setTitle("Help")
+        //set message for alert dialog
+        builder.setMessage("1. Enter location on the search input, press search button, long press the RED marker drag/drop to preferred location. click on marker to pin a location \n\n" +
+                "2. Activate GPS in your phone settings, once GPS is ON,  click on Location icon on top right of this screen, click the marker to use your current location.")
+        builder.setIcon(android.R.drawable.ic_dialog_info)
+
+        //performing positive action
+        builder.setPositiveButton("OK"){dialogInterface, which ->
+
+            // Toast.makeText(applicationContext,"Location Captured",Toast.LENGTH_SHORT).show()
+        }
+
+        //performing positive action
+        builder.setNegativeButton("Activate GPS"){dialogInterface, which ->
+            startActivity(Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS));
+            finish()
+            // Toast.makeText(applicationContext,"Location Captured",Toast.LENGTH_SHORT).show()
+        }
+
+        // Create the AlertDialog
+        val alertDialog: AlertDialog = builder.create()
+        // Set other dialog properties
+        alertDialog.setCancelable(false)
+        alertDialog.show()
+
+    }
+
     fun searchLocation(view: View) {
         val sharedPref: SharedPreferences = getSharedPreferences("mediprefs", Context.MODE_PRIVATE)
         progress.visibility = View.VISIBLE
@@ -252,7 +284,7 @@ class Maps1Activity() : FragmentActivity(), OnMapReadyCallback, LocationListener
         var addressList: List<Address>? = null
 
         if (location == null || location == "") {
-            Toast.makeText(applicationContext,"Please type a location",Toast.LENGTH_SHORT).show()
+            Toast.makeText(applicationContext,"Please type your preferred location",Toast.LENGTH_SHORT).show()
             progress.visibility = View.GONE
         }
         else{
@@ -276,14 +308,16 @@ class Maps1Activity() : FragmentActivity(), OnMapReadyCallback, LocationListener
                         mMap!!.addMarker(
                             MarkerOptions().position(latLng).title(location).draggable(true)
                         )
-                        mMap!!.animateCamera(CameraUpdateFactory.newLatLng(latLng))
+                        mMap!!.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, 17f))
                         progress.visibility = View.GONE
+                       Toast.makeText(applicationContext,"Long press on the Red marker, drag to preferred place and tap on it to pin a location.",Toast.LENGTH_LONG).show()
+                    //Use Searched Location? if No, long press the marker, drag to preferred place and tap it.
 
                         val builder = AlertDialog.Builder(this)
                         //set title for alert dialog
                         builder.setTitle("Location")
                         //set message for alert dialog
-                        builder.setMessage("Use Searched Location?")
+                        builder.setMessage("Use Searched Location? if No, long press the marker, drag to preferred place and tap it. ")
                         builder.setIcon(android.R.drawable.ic_dialog_alert)
 
                         //performing positive action
@@ -325,26 +359,25 @@ class Maps1Activity() : FragmentActivity(), OnMapReadyCallback, LocationListener
                         val alertDialog: AlertDialog = builder.create()
                         // Set other dialog properties
                         alertDialog.setCancelable(false)
-                        alertDialog.show()
+                        //alertDialog.show()
                         //Toast.makeText(applicationContext, address.latitude.toString() + " " + address.longitude, Toast.LENGTH_LONG).show()
 
 
                 }
 
                 else {
-                    Toast.makeText(applicationContext,"Not Found, Please provide more description of a place",Toast.LENGTH_LONG).show()
+                    Toast.makeText(applicationContext,"Please provide more description of a place and search",Toast.LENGTH_LONG).show()
                     progress.visibility = View.GONE
                 }
 
             }
 
             else {
-                Toast.makeText(applicationContext,"Not Found, Please provide more description of a place",Toast.LENGTH_LONG).show()
+                Toast.makeText(applicationContext,"Please provide more description of a place and search",Toast.LENGTH_LONG).show()
                 progress.visibility = View.GONE
             }
 
         }
-
     }
 
 
@@ -366,8 +399,6 @@ class Maps1Activity() : FragmentActivity(), OnMapReadyCallback, LocationListener
         fusedLocationClient.lastLocation
             .addOnSuccessListener { location ->
                 // getting the last known or current location
-
-
                 if (location != null){
                 val latLng = LatLng(location.latitude, location.longitude)
 
@@ -393,7 +424,7 @@ class Maps1Activity() : FragmentActivity(), OnMapReadyCallback, LocationListener
                         //set title for alert dialog
                         builder.setTitle("Location")
                         //set message for alert dialog
-                        builder.setMessage("Use Current Location")
+                        builder.setMessage("Use Current Location, if No, long press the marker, drag to preferred place and click on it. ")
                         builder.setIcon(android.R.drawable.ic_dialog_map)
 
                         //performing positive action
@@ -418,7 +449,7 @@ class Maps1Activity() : FragmentActivity(), OnMapReadyCallback, LocationListener
                         builder.setNegativeButton("No") { dialogInterface, which ->
                             Toast.makeText(
                                 applicationContext,
-                                "Please type another location or press back",
+                                "Please Enter another location or long press, move the marker and tap it",
                                 Toast.LENGTH_LONG
                             ).show()
                         }
@@ -432,7 +463,7 @@ class Maps1Activity() : FragmentActivity(), OnMapReadyCallback, LocationListener
                     } else {
                         Toast.makeText(
                             applicationContext,
-                            "Not Found, Please Select another location or press back",
+                            "Please Enter another location or long press, move the marker and tap it",
                             Toast.LENGTH_LONG
                         ).show()
                         progress.visibility = View.GONE
@@ -440,33 +471,37 @@ class Maps1Activity() : FragmentActivity(), OnMapReadyCallback, LocationListener
                 } else {
                     Toast.makeText(
                         applicationContext,
-                        "Not Found, Please Select another location or press back",
+                        "Not Found, Please enter another location or press back",
                         Toast.LENGTH_LONG
                     ).show()
                     progress.visibility = View.GONE
                 }
                 progress.visibility = View.GONE
             }
-
                 else {
-                    val builder = AlertDialog.Builder(this)
-                    //set title for alert dialog
-                    builder.setTitle("Information")
-                    //set message for alert dialog
-                    builder.setMessage("Please Activate Your GPS")
-                    builder.setIcon(android.R.drawable.ic_dialog_alert)
-
-                    //performing positive action
-                    builder.setPositiveButton("OK"){dialogInterface, which ->
-                          finish()
-                       // Toast.makeText(applicationContext,"Location Captured",Toast.LENGTH_SHORT).show()
-                    }
-
-                    // Create the AlertDialog
-                    val alertDialog: AlertDialog = builder.create()
-                    // Set other dialog properties
-                    alertDialog.setCancelable(false)
-                    alertDialog.show()
+                    Toast.makeText(applicationContext,"Activate GPS and CLICK on Location icon on top right to use current location",Toast.LENGTH_LONG).show()
+                    progress.visibility = View.GONE
+//                    val builder = AlertDialog.Builder(this)
+//                    //set title for alert dialog
+//                    builder.setTitle("Information")
+//                    //set message for alert dialog
+//                    builder.setMessage("Please Activate Your GPS")
+//                    builder.setIcon(android.R.drawable.ic_dialog_alert)
+//
+//                    //performing positive action
+//                    builder.setPositiveButton("OK"){dialogInterface, which ->
+//
+//                         startActivity(Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS));
+//                         finish()
+//                       // Toast.makeText(applicationContext,"Location Captured",Toast.LENGTH_SHORT).show()
+//                    }
+//
+//                    // Create the AlertDialog
+//                    val alertDialog: AlertDialog = builder.create()
+//
+//                    // Set other dialog properties
+//                    alertDialog.setCancelable(false)
+//                    alertDialog.show()
                 }
 
             }

@@ -119,7 +119,7 @@ public class ForgotPass extends AppCompatActivity {
 
                                     if (obj.has("otp")) {
                                         int otp = Integer.parseInt((obj.getString("otp")));
-                                        Toast.makeText(ForgotPass.this, ""+otp, Toast.LENGTH_SHORT).show();
+                                        //Toast.makeText(ForgotPass.this, ""+otp, Toast.LENGTH_SHORT).show();
                                     }
 
                                     //here
@@ -239,6 +239,7 @@ public class ForgotPass extends AppCompatActivity {
                                             editor.putString("otp", otp_input);
                                             editor.apply();
                                             startActivity(new Intent(getApplicationContext(), ChangePassword.class));
+                                            finish();
                                         }
 
                                     }
