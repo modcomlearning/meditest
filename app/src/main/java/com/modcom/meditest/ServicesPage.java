@@ -148,7 +148,7 @@ public class ServicesPage extends AppCompatActivity {
                                 dialog.dismiss();
                                 Toast.makeText(ServicesPage.this, "Error!, Try again", Toast.LENGTH_SHORT).show();
                                 // Log.i("onEmptyResponse", "Returned empty response");//Toast.makeText(getContext(),"Nothing returned",Toast.LENGTH_LONG).show();
-                                startActivity(new Intent(getApplicationContext(), NewMainPage.class));
+                                startActivity(new Intent(getApplicationContext(), Updated.class));
                                 finish();
 
                             }
@@ -156,7 +156,7 @@ public class ServicesPage extends AppCompatActivity {
                         else {
                             dialog.dismiss();
                             Toast.makeText(ServicesPage.this, "No Server Response, Try Again", Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(getApplicationContext(), NewMainPage.class));
+                            startActivity(new Intent(getApplicationContext(), Updated.class));
                             finish();
                         }
 
@@ -182,7 +182,7 @@ public class ServicesPage extends AppCompatActivity {
                     //Log.d("error", t.getMessage());
                     Toast.makeText(ServicesPage.this, "There was a server error, check your internet & try again", Toast.LENGTH_SHORT).show();
 
-                    startActivity(new Intent(getApplicationContext(), NewMainPage.class));
+                    startActivity(new Intent(getApplicationContext(), Updated.class));
                     finish();
 
                 }
@@ -282,7 +282,7 @@ public class ServicesPage extends AppCompatActivity {
             SharedPreferences.Editor editor = shared.edit();
             editor.clear();
             editor.apply();
-            startActivity(new Intent(getApplicationContext(), NewMainPage.class));
+            startActivity(new Intent(getApplicationContext(), Updated.class));
             finish();
         }
 

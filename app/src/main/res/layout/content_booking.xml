@@ -15,7 +15,7 @@
         android:orientation="vertical"
         android:layout_height="match_parent">
 
-        <TextView
+        <com.google.android.material.textview.MaterialTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="20dp"
@@ -25,7 +25,7 @@
             android:text="Booking Information" />
 
 
-        <TextView
+        <com.google.android.material.textview.MaterialTextView
             android:id="@+id/booking_id"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -33,14 +33,14 @@
             android:layout_marginLeft="10dp"
             android:text="" />
 
-        <TextView
+        <com.google.android.material.textview.MaterialTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textStyle="bold"
             android:layout_marginLeft="10dp"
             android:text="Patient Name:" />
 
-        <TextView
+        <com.google.android.material.textview.MaterialTextView
             android:id="@+id/patient_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -50,7 +50,7 @@
             android:text="" />
 
 
-        <TextView
+        <com.google.android.material.textview.MaterialTextView
             android:id="@+id/title_relationship"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -58,7 +58,7 @@
             android:layout_marginLeft="10dp"
             android:text="Relationship" />
 
-        <TextView
+        <com.google.android.material.textview.MaterialTextView
             android:id="@+id/patient_relationship"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -78,15 +78,15 @@
             android:layout_centerVertical="true"
             android:layout_weight="1"
             android:layout_marginRight="20dp"
-            android:background="@drawable/white_button"
+            android:background="@drawable/grey_button"
             android:textStyle="bold"
-            android:textColor="@android:color/black"
+            android:textColor="@android:color/white"
             android:text=" Upload Prescription "
             />
 
 
 
-        <TextView
+        <com.google.android.material.textview.MaterialTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textStyle="bold"
@@ -103,7 +103,7 @@
             android:layout_marginRight="7dp"
             android:layout_weight="1">
 
-            <TextView
+            <com.google.android.material.textview.MaterialTextView
                 android:layout_weight=".7"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -113,7 +113,7 @@
                 android:layout_marginRight="4dp"
                 android:background="#c5c5c5" />
 
-            <TextView
+            <com.google.android.material.textview.MaterialTextView
                 android:layout_weight=".3"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -135,7 +135,7 @@
           />
 
 
-        <TextView
+        <com.google.android.material.textview.MaterialTextView
             android:id="@+id/laboratory_tests"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -147,7 +147,7 @@
             android:layout_marginBottom="10dp"
             android:text="" />
 
-        <TextView
+        <com.google.android.material.textview.MaterialTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textStyle="bold"
@@ -164,11 +164,11 @@
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
             android:layout_marginLeft="15dp"
-            android:background="@drawable/white_button"
+            android:background="@drawable/grey_button"
             android:textStyle="bold"
             android:layout_marginRight="10dp"
             android:layout_marginTop="6dp"
-            android:textColor="@android:color/black"
+            android:textColor="@android:color/white"
             android:padding="10dp"
             android:text="Add Your Location"
             />
@@ -177,7 +177,7 @@
 
 
 
-        <TextView
+        <com.google.android.material.textview.MaterialTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textStyle="bold"
@@ -201,9 +201,9 @@
             android:layout_centerVertical="true"
             android:layout_marginLeft="10dp"
             android:layout_weight="1"
-            android:background="@drawable/white_button"
+            android:background="@drawable/grey_button"
             android:textStyle="bold"
-            android:textColor="@android:color/black"
+            android:textColor="@android:color/white"
             android:padding="10dp"
             android:text="Select Date"
             />
@@ -218,9 +218,9 @@
             android:layout_centerVertical="true"
             android:layout_weight="1"
             android:layout_marginRight="10dp"
-            android:background="@drawable/white_button"
+            android:background="@drawable/grey_button"
             android:textStyle="bold"
-            android:textColor="@android:color/black"
+            android:textColor="@android:color/white"
             android:padding="10dp"
             android:text="Select Time"
             />
@@ -266,23 +266,35 @@
             android:layout_marginTop="8dp"
             android:layout_marginLeft="10dp"
             android:layout_marginBottom="8dp">
-            <EditText android:id="@+id/book_phone"
+
+
+
+            <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat"
+                android:hint="Phone Number 2547xxx"
+                android:id="@+id/book_phone"
+                android:focusable="true"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
                 android:inputType="phone"
-                android:hint="Phone Number 2547xxx" />
+                />
         </com.google.android.material.textfield.TextInputLayout>
 
 
-            <EditText android:id="@+id/book_address"
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginTop="2dp"
-                android:inputType="textMultiLine"
-                android:hint="Location description i.e house No, street, building" />
 
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat"
+            android:hint="Location description i.e house No, street, building"
+            android:id="@+id/book_address"
+            android:focusable="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:inputType="textMultiLine"
+            />
 
         <androidx.appcompat.widget.AppCompatButton
             android:layout_width="match_parent"

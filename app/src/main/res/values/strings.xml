@@ -2,6 +2,11 @@
     <string name="app_name">meditest</string>
     <string name="title_activity_home">Meditest</string>
     <string name="google_directions_key">AIzaSyADJ5G0PakkeOhAKZBdsJ7hSyPbM2RaTwE</string>
+    <string name="welcome_back">Welcome</string>
+    <string name="laboratory">Laboratory</string>
+    <string name="pharmacy">Pharmacy</string>
+    <string name="consultation">Consultation</string>
+    <string name="homecare">Home Care</string>
     <string name="large_text">
         "Material is the metaphor.\n\n"
 
@@ -119,4 +124,6 @@
     <string name="title_activity_new_main_page">ScrollingActivity</string>
     <string name="title_activity_maps2">Map</string>
     <string name="title_activity_track">Tracking</string>
+    <string name="title_activity_updated_main">ScrollingActivity</string>
+    <string name="title_activity_updated">ScrollingActivity</string>
 </resources>

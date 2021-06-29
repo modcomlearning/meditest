@@ -21,11 +21,19 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp">
-            <EditText android:id="@+id/dep_first_name"
+
+
+            <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat"
+                android:hint="First Name"
+                android:id="@+id/dep_first_name"
+                android:focusable="true"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
                 android:inputType="textPersonName"
-                android:hint="First Name" />
+                />
         </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -36,11 +44,19 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp">
-            <EditText android:id="@+id/dep_last_name"
+
+
+            <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat"
+                android:hint="Last Name"
+                android:id="@+id/dep_last_name"
+                android:focusable="true"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
                 android:inputType="textPersonName"
-                android:hint="Last Name" />
+                />
         </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -50,11 +66,20 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp">
-            <EditText android:id="@+id/dep_sirname"
+
+
+            <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat"
+                android:hint="Surname"
+                android:id="@+id/dep_sirname"
+                android:focusable="true"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
                 android:inputType="textPersonName"
-                android:hint="Surname" />
+                />
+
         </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -70,6 +95,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textStyle="bold"
+                android:layout_marginStart="14dp"
+                android:layout_marginEnd="10dp"
                 android:text="Gender"/>
             <Spinner
                 android:layout_width="match_parent"
@@ -91,6 +118,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textStyle="bold"
+                android:layout_marginStart="14dp"
+                android:layout_marginEnd="10dp"
                 android:text="Relationship"/>
             <Spinner
                 android:layout_width="match_parent"
@@ -106,11 +135,21 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp">
-            <EditText android:id="@+id/dep_address"
+
+
+            <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textEmailAddress"
-                android:hint="Enter Address"/>
+                android:fontFamily="@font/montserrat"
+                android:hint="Enter Address"
+                android:id="@+id/dep_address"
+                android:focusable="true"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:inputType="text"
+                />
+
+
         </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -118,11 +157,11 @@
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/dep_btnDate"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
-            android:background="@drawable/bg_select"
+            android:background="@drawable/grey_button"
             android:textStyle="bold"
             android:textColor="@android:color/white"
             android:padding="10dp"
@@ -134,7 +173,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-
             android:textColor="#000000"
             android:textSize="20sp"
             android:textStyle="bold" />

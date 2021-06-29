@@ -52,7 +52,7 @@ SharedPreferences shared;
         paylater.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), NewMainPage.class));
+                startActivity(new Intent(getApplicationContext(), Updated.class));
                 finish();
             }
         });
@@ -94,7 +94,7 @@ SharedPreferences shared;
         JsonObject jsonObject = new JsonObject();
         jsonObject.addProperty("amount",  total_amount);
         jsonObject.addProperty("party_a",  phone);
-        jsonObject.addProperty("account_ref",  "Mawingu");
+        jsonObject.addProperty("account_ref",  "Meditest");
         jsonObject.addProperty("trans_desc",  "Fine Payment");
         jsonObject.addProperty("remarks",  "Pay via mpesa");
         jsonObject.addProperty("booking_id",  booking_id);
@@ -120,7 +120,7 @@ SharedPreferences shared;
                                                 public void onClick(DialogInterface dialog,
                                                                     int whichButton) {
 
-                                                    startActivity(new Intent(getApplicationContext(), NewMainPage.class));
+                                                    startActivity(new Intent(getApplicationContext(), Updated.class));
                                                     finish();
                                                 }
                                             }).show();
@@ -340,7 +340,7 @@ SharedPreferences shared;
                                                                     int whichButton) {
 
                                                     dbHelper.deleteAllItems();
-                                                    startActivity(new Intent(getApplicationContext(), NewMainPage.class));
+                                                    startActivity(new Intent(getApplicationContext(), Updated.class));
                                                     dialog.dismiss();
                                                     finish();
 
@@ -356,7 +356,7 @@ SharedPreferences shared;
                                     .setCancelable(false)
                                     .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                                         public void onClick(DialogInterface dialog, int id) {
-                                            startActivity(new Intent(getApplicationContext(), NewMainPage.class));
+                                            startActivity(new Intent(getApplicationContext(), Updated.class));
                                         }
                                     });
                             //Creating dialog box

@@ -23,7 +23,7 @@
             android:gravity="center_vertical|center_horizontal"
             android:orientation="horizontal">
 
-            <TextView
+            <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/txt_scheduled"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -34,7 +34,7 @@
                 android:text="Scheduled"
                 />
 
-            <TextView
+            <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/txt_status1"
                 android:layout_width="116dp"
                 android:layout_height="wrap_content"
@@ -46,7 +46,7 @@
                 android:textStyle="bold" />
 
 
-            <TextView
+            <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/txt_status"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -66,7 +66,7 @@
             android:layout_height="fill_parent"
             android:orientation="horizontal">
 
-            <TextView
+            <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/txt_single_date"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -86,7 +86,7 @@
             android:gravity="center_vertical|center_horizontal"
             android:orientation="horizontal">
 
-            <TextView
+            <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/txt_single_time"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -99,7 +99,7 @@
                 android:text="10.30"
                 />
 
-            <TextView
+            <com.google.android.material.textview.MaterialTextView
                 android:textColor="@color/white"
                 android:id="@+id/view_phlebo"
                 android:layout_width="wrap_content"
@@ -109,7 +109,7 @@
                 android:clickable="true"
                 android:textStyle="bold"
                 android:padding="3dp"
-                android:background="@drawable/bg_rounded1"
+                android:background="@drawable/bg_select"
                 android:textSize="18sp"
                 android:layout_marginTop="10dp"
                 android:text="View Phlebo Details"
@@ -125,7 +125,7 @@
             android:layout_height="fill_parent"
             android:orientation="horizontal">
 
-            <TextView
+            <com.google.android.material.textview.MaterialTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="left"
@@ -148,7 +148,7 @@
 
 
                     <!-- first element of the row-->
-                    <TextView
+                    <com.google.android.material.textview.MaterialTextView
                         android:id="@+id/txt_test_name"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -169,7 +169,7 @@
             android:gravity="right"
             android:orientation="horizontal">
 
-            <TextView
+            <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/txt_total_amount"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -190,17 +190,18 @@
 
             <!-- Signup Button -->
 
-            <TextView android:id="@+id/btn_make_pay_now"
-                android:layout_width="fill_parent"
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_make_pay_now"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="#2440DA"
+                android:textColor="@color/white"
+                android:background="@drawable/grey_button"
                 android:layout_marginTop="2dp"
-                android:gravity="right"
                 android:textStyle="bold"
                 android:layout_marginBottom="2dp"
-                android:text="CLICK TO PAY NOW."
+                android:text="PAY NOW."
                 android:clickable="true"
-                android:textSize="18dip"/>
+                android:textSize="14dp"/>
 
         </LinearLayout>
 
@@ -211,7 +212,7 @@
             android:layout_marginTop="10dp"
             android:orientation="horizontal">
 
-            <TextView
+            <com.google.android.material.textview.MaterialTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="18dp"
@@ -230,7 +231,7 @@
             android:layout_marginTop="10dp"
             android:orientation="horizontal">
 
-            <TextView
+            <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/txt_patient_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -239,7 +240,7 @@
                 android:text=""
                 />
 
-            <TextView
+            <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/txt_patient_relationship"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -257,7 +258,7 @@
             android:layout_marginTop="10dp"
             android:orientation="horizontal">
 
-            <TextView
+            <com.google.android.material.textview.MaterialTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="left"
@@ -275,7 +276,7 @@
             android:layout_height="fill_parent"
             android:orientation="horizontal">
 
-            <TextView
+            <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/txt_contacts"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -293,7 +294,7 @@
             android:layout_height="fill_parent"
             android:orientation="horizontal">
 
-            <TextView
+            <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/txt_exact_location"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

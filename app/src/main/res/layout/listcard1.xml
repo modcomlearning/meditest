@@ -9,14 +9,14 @@
     android:layout_marginBottom="10dp"
     >
 
-    <TextView
+    <com.google.android.material.textview.MaterialTextView
         android:id="@+id/testName"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight=".7"
         android:text="Laboratory test"/>
 
-    <TextView
+    <com.google.android.material.textview.MaterialTextView
         android:id="@+id/testPrice"
         android:layout_width="0dp"
         android:layout_marginLeft="10dp"

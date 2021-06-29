@@ -14,6 +14,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.material.textfield.TextInputEditText;
 import com.google.gson.JsonObject;
 
 import retrofit2.Call;
@@ -31,7 +32,7 @@ import services.ServiceGenerator;
 //this is the login page
 public class UserLogin extends AppCompatActivity {
 
-    EditText password, email;
+    TextInputEditText password, email;
     Button btn_signin;
     SharedPreferences shared;
 
@@ -50,7 +51,7 @@ public class UserLogin extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //when you click back arraow
-                Intent intent = new Intent(getApplicationContext(), NewMainPage.class);
+                Intent intent = new Intent(getApplicationContext(), Updated.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(intent);
                 finish();

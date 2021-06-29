@@ -49,7 +49,7 @@ public class SingleBooking extends AppCompatActivity {
     TextView txt_exact_location, view_phlebo, txt_total_amount;
     LinearLayout linearLayout;
     SharedPreferences shared;
-    TextView btn_pay_now;
+    Button btn_pay_now;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -271,7 +271,7 @@ public class SingleBooking extends AppCompatActivity {
                                             }
                                         }).show();
                         alert.setCanceledOnTouchOutside(false);
-                        startActivity(new Intent(getApplicationContext(), NewMainPage.class));
+                        startActivity(new Intent(getApplicationContext(), Updated.class));
                    //     Log.i("onEmptyResponse", "Returned empty response");//Toast.makeText(getContext(),"Nothing returned",Toast.LENGTH_LONG).show();
                     }
                 }
@@ -288,7 +288,7 @@ public class SingleBooking extends AppCompatActivity {
             public void onFailure(Call<String> call, Throwable t) {
                 dialog.dismiss();
                 Toast.makeText(SingleBooking.this, "There was a server error, try again", Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(getApplicationContext(), NewMainPage.class));
+                startActivity(new Intent(getApplicationContext(), Updated.class));
                 finish();
             }
         });

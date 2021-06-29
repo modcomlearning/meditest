@@ -13,6 +13,8 @@ import android.widget.AdapterViewFlipper;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.google.android.material.circularreveal.cardview.CircularRevealCardView;
+
 import java.util.ArrayList;
 
 import offers.APIService;
@@ -32,6 +34,7 @@ public class NewHome extends AppCompatActivity {
     Button btn_others;
     String email_pref;
     String password_pref;
+    CircularRevealCardView layoutself, layoutothers;
 
     //the base url
     public static final String BASE_URL = "https://www.simplifiedcoding.net/demos/view-flipper/";
@@ -45,9 +48,9 @@ public class NewHome extends AppCompatActivity {
         //create/get prefs
         shared = getSharedPreferences("mediprefs", MODE_PRIVATE);
 
-        btn_self  = findViewById(R.id.btn_self);
-        btn_others = findViewById(R.id.btn_others);
-        btn_self.setOnClickListener(new View.OnClickListener() {
+        layoutself  = findViewById(R.id.layoutself);
+        layoutothers = findViewById(R.id.layoutothers);
+        layoutself.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 // if its self go to confirm booking
@@ -61,7 +64,7 @@ public class NewHome extends AppCompatActivity {
             }
         });
 
-        btn_others.setOnClickListener(new View.OnClickListener() {
+        layoutothers.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 //if others go to others activity
@@ -130,7 +133,7 @@ public class NewHome extends AppCompatActivity {
             editor.clear();
             editor.apply();
             editor.commit();
-            startActivity(new Intent(getApplicationContext(), NewMainPage.class));
+            startActivity(new Intent(getApplicationContext(), Updated.class));
             finish();
         }
 

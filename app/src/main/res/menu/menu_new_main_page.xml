@@ -6,7 +6,7 @@
         android:id="@+id/view_booking"
         android:orderInCategory="100"
         android:title="My Bookings"
-        app:showAsAction="never" />
+        app:showAsAction="always" />
 
     <item
         android:id="@+id/action_logout"

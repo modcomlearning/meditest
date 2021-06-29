@@ -209,7 +209,7 @@ LinearLayout linearLayout;
                 else {
                     dialog.dismiss();
                     Toast.makeText(TestDescActivity.this, "No Response, try again", Toast.LENGTH_SHORT).show();
-                    startActivity(new Intent(getApplicationContext(), NewMainPage.class));
+                    startActivity(new Intent(getApplicationContext(), Updated.class));
                     finish();
                 }
             }

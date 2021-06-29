@@ -12,15 +12,21 @@
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:textColor="@android:color/black"
         android:id="@+id/id" />
-    <TextView
+    <com.google.android.material.textview.MaterialTextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:textAppearance="@style/TextAppearance.AppCompat.Widget.PopupMenu.Large"
+        android:layout_marginBottom="1dp"
+        android:fontFamily="@font/montserrat"
         android:textColor="@android:color/black"
         android:id="@+id/name" />
 
-    <TextView
+    <com.google.android.material.textview.MaterialTextView
         android:layout_width="wrap_content"
+        android:layout_marginTop="5dp"
+        android:textSize="13sp"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:textColor="@android:color/black"

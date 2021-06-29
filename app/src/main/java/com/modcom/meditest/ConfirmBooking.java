@@ -597,7 +597,7 @@ public class ConfirmBooking extends AppCompatActivity {
                                                 .setCancelable(false)
                                                 .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                                                     public void onClick(DialogInterface dialog, int id) {
-                                                        startActivity(new Intent(getApplicationContext(), NewMainPage.class));
+                                                        startActivity(new Intent(getApplicationContext(), Updated.class));
                                                     }
                                                 });
                                         //Creating dialog box

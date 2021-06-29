@@ -124,7 +124,7 @@ public class MyBookings extends AppCompatActivity {
                     else {
                         dialog.dismiss();
                         Toast.makeText(MyBookings.this, "No Response, Try Again", Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(getApplicationContext(), NewMainPage.class));
+                        startActivity(new Intent(getApplicationContext(), Updated.class));
                         finish();
                     }
 

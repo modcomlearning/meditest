@@ -22,7 +22,7 @@
             android:paddingRight="24dp">
 
 
-            <TextView
+            <com.google.android.material.textview.MaterialTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Pay Via MPESA"
@@ -33,7 +33,7 @@
                 android:textColor="@color/colorMed"
                 />
 
-            <TextView
+            <com.google.android.material.textview.MaterialTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Amount Payable"
@@ -51,13 +51,17 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="8dp">
 
-                <EditText android:id="@+id/amount_to_pay"
-                    android:enabled="false"
-                    android:textStyle="bold"
+
+                <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="textCapWords"
-                    android:hint="" />
+                    android:fontFamily="@font/montserrat"
+                    android:hint=""
+                    android:enabled="false"
+                    android:id="@+id/amount_to_pay"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:inputType="textCapWords" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -68,12 +72,16 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="8dp">
 
-                <EditText android:id="@+id/phone_to_pay"
+
+                <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
-                    android:enabled="true"
                     android:layout_height="wrap_content"
-                    android:inputType="phone"
-                    android:hint="Your Phone Number 2547xx" />
+                    android:fontFamily="@font/montserrat"
+                    android:hint="Enter Phone No. 2547xxx"
+                    android:id="@+id/phone_to_pay"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:inputType="phone" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -95,7 +103,7 @@
 
 
 
-            <TextView
+            <com.google.android.material.textview.MaterialTextView
                 android:layout_width="match_parent"
                 android:id="@+id/paylater"
                 android:layout_height="wrap_content"

@@ -5,14 +5,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context=".ConfirmBooking">
+    tools:context=".Updated">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/app_bar"
         android:layout_width="match_parent"
         android:layout_height="@dimen/app_bar_height"
+        android:gravity="center"
+        app:elevation="0dp"
         android:fitsSystemWindows="true"
-        android:background="@color/medi_button"
         android:theme="@style/AppTheme.AppBarOverlay">
 
         <com.google.android.material.appbar.CollapsingToolbarLayout
@@ -20,23 +21,26 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:fitsSystemWindows="true"
-            app:contentScrim="@drawable/footer"
+            android:layout_gravity="bottom"
+            app:elevation="0dp"
+            app:contentScrim="?attr/colorPrimary"
             app:layout_scrollFlags="scroll|exitUntilCollapsed"
             app:toolbarId="@+id/toolbar">
 
             <androidx.appcompat.widget.Toolbar
                 android:id="@+id/toolbar"
+                android:gravity="start"
+                app:elevation="0dp"
+                android:layout_gravity="start"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 app:layout_collapseMode="pin"
-                android:background="@color/medi_button"
-                app:popupTheme="@style/AppTheme.PopupOverlay" />
+                app:popupTheme="@style/AppTheme.PopupOverlay"
+                />
 
         </com.google.android.material.appbar.CollapsingToolbarLayout>
     </com.google.android.material.appbar.AppBarLayout>
 
-    <include layout="@layout/content_booking" />
-
-
+    <include layout="@layout/updated_scrolling" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

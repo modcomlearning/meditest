@@ -14,11 +14,10 @@
         android:paddingLeft="24dp"
         android:paddingRight="24dp">
 
-        <TextView
+        <com.google.android.material.textview.MaterialTextView
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="24dp"
-            android:textColor="#3F51B5"
             android:text="Step 1: Provide Your Phone Number below to reset password"
             android:gravity="center"
             android:clickable="true"
@@ -30,11 +29,19 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp">
-            <EditText android:id="@+id/user_reset_phone"
+
+
+            <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="phone"
-                android:hint="Your Phone Number 2547XXXXXXXX" />
+                android:fontFamily="@font/montserrat"
+                android:hint="Enter Your Phone 254xxx"
+                android:id="@+id/user_reset_phone"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:inputType="phone" />
+
+
         </com.google.android.material.textfield.TextInputLayout>
         <!-- Email Label -->
 
@@ -52,11 +59,10 @@
             android:text="Request OTP"/>
 
 
-        <TextView
+        <com.google.android.material.textview.MaterialTextView
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="24dp"
-            android:textColor="#3F51B5"
             android:text="Step 2: You will receive an OTP code through SMS, please provide your OTP below"
             android:gravity="center"
             android:clickable="true"
@@ -71,11 +77,16 @@
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp">
 
-            <EditText android:id="@+id/user_reset_otp"
+
+            <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="number"
-                android:hint="Enter OTP"/>
+                android:fontFamily="@font/montserrat"
+                android:hint="Enter OTP"
+                android:id="@+id/user_reset_otp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:inputType="number" />
         </com.google.android.material.textfield.TextInputLayout>
 
 

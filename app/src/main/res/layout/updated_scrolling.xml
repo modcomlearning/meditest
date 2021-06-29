@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".Updated"
+    tools:showIn="@layout/activity_updated">
+    <com.google.android.material.circularreveal.CircularRevealLinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_marginStart="0dp"
+        android:layout_marginEnd="0dp"
+        android:layout_height="match_parent">
+        <View
+            android:layout_width="match_parent"
+            android:background="@drawable/header"
+            android:orientation="vertical"
+            android:layout_gravity="bottom"
+            android:gravity="bottom"
+            android:layout_height="20dp">
+        </View>
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="wrap_content"
+            android:text="@string/welcome_back"
+            android:layout_gravity="start"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/calibri"
+            android:layout_marginStart="20dp"
+            android:textSize="17sp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp" />
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="wrap_content"
+            android:text="What are you looking for?"
+            android:layout_gravity="start"
+            app:fontFamily="@font/montserrat"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/purple_200"
+            android:fontFamily="@font/montserrat"
+            android:layout_marginStart="20dp"
+            android:textSize="20sp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            tools:ignore="RtlCompat" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp"
+            android:layout_height="wrap_content">
+            <com.google.android.material.circularreveal.cardview.CircularRevealCardView
+                android:layout_width="match_parent"
+                app:cardPreventCornerOverlap="true"
+                app:cardUseCompatPadding="true"
+                app:cardCornerRadius="18dp"
+                android:layout_weight="1"
+                app:cardElevation="7dp"
+                android:id="@+id/layoutlab"
+                android:backgroundTint="@color/card_background"
+                android:layout_height="180dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="vertical"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:padding="10dp"
+                        android:layout_width="match_parent"
+                        android:src="@drawable/lab"
+                        android:layout_height="115dp"/>
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="match_parent"
+                        android:text="@string/laboratory"
+                        android:gravity="center"
+                        android:textColor="@color/grey_600"
+
+                        android:fontFamily="@font/montserrat"
+                        android:layout_marginTop="5dp"
+                        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+            </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
+
+            <com.google.android.material.circularreveal.cardview.CircularRevealCardView
+                android:layout_width="match_parent"
+                app:cardPreventCornerOverlap="true"
+                app:cardUseCompatPadding="true"
+                app:cardCornerRadius="18dp"
+                android:layout_weight="1"
+                android:id="@+id/layoutpharmacy"
+                app:cardElevation="7dp"
+                android:backgroundTint="@color/card_background"
+
+                android:layout_height="180dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="vertical"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:padding="10dp"
+                        android:layout_width="match_parent"
+                        android:src="@drawable/pharmacy"
+                        android:layout_height="115dp"/>
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="match_parent"
+                        android:text="@string/pharmacy"
+                        android:gravity="center"
+                        android:textColor="@color/grey_600"
+
+                        android:fontFamily="@font/montserrat"
+                        android:layout_marginTop="5dp"
+                        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+            </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp"
+            android:layout_height="wrap_content">
+            <com.google.android.material.circularreveal.cardview.CircularRevealCardView
+                android:layout_width="match_parent"
+                app:cardPreventCornerOverlap="true"
+                app:cardUseCompatPadding="true"
+                app:cardCornerRadius="18dp"
+                android:layout_weight="1"
+                app:cardElevation="7dp"
+                android:id="@+id/layoutconsulttion"
+                android:backgroundTint="@color/card_background"
+                android:layout_height="180dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="vertical"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:padding="10dp"
+                        android:layout_width="match_parent"
+                        android:src="@drawable/consulting"
+                        android:layout_height="115dp"/>
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="match_parent"
+                        android:text="@string/consultation"
+                        android:gravity="center"
+                        android:textColor="@color/grey_600"
+
+                        android:fontFamily="@font/montserrat"
+                        android:layout_marginTop="5dp"
+                        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+            </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
+            <com.google.android.material.circularreveal.cardview.CircularRevealCardView
+                android:layout_width="match_parent"
+                app:cardPreventCornerOverlap="true"
+                app:cardUseCompatPadding="true"
+                app:cardCornerRadius="18dp"
+                android:layout_weight="1"
+                android:id="@+id/layouthome"
+                app:cardElevation="7dp"
+                android:backgroundTint="@color/card_background"
+
+                android:layout_height="180dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="vertical"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:padding="10dp"
+                        android:layout_width="match_parent"
+                        android:src="@drawable/homecare"
+                        android:layout_height="115dp"/>
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="match_parent"
+                        android:text="@string/homecare"
+                        android:gravity="center"
+                        android:textColor="@color/grey_600"
+
+                        android:fontFamily="@font/montserrat"
+                        android:layout_marginTop="5dp"
+                        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+            </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
+
+        </LinearLayout>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="wrap_content"
+            android:text="Latest Offers"
+            android:layout_gravity="start"
+            app:fontFamily="@font/montserrat"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/montserrat"
+            android:layout_marginStart="20dp"
+            android:textSize="14sp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            tools:ignore="RtlCompat" />
+
+        <!--this section is for carousel-->
+        <com.google.android.material.circularreveal.cardview.CircularRevealCardView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            app:cardCornerRadius="16dp"
+            app:elevation="15dp"
+            android:padding="10dp"
+            android:layout_margin="4dp"
+            app:cardUseCompatPadding="true"
+            app:cardPreventCornerOverlap="true"
+            android:layout_height="170dp">
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_height="wrap_content">
+
+
+                <AdapterViewFlipper
+                    android:id="@+id/adapterViewFlipper"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                </AdapterViewFlipper>
+
+                
+
+            </RelativeLayout>
+
+        </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
+        <!--end of carousel-->
+
+    </com.google.android.material.circularreveal.CircularRevealLinearLayout>
+
+
+
+</androidx.core.widget.NestedScrollView>
