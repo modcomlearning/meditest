@@ -11,12 +11,16 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterViewFlipper;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.circularreveal.cardview.CircularRevealCardView;
 
+import java.math.BigDecimal;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
+import helpers.StoreDatabase;
 import offers.APIService;
 import offers.FlipperAdapter;
 import offers.Hero;
@@ -37,8 +41,8 @@ public class NewHome extends AppCompatActivity {
     CircularRevealCardView layoutself, layoutothers;
 
     //the base url
-    public static final String BASE_URL = "https://www.simplifiedcoding.net/demos/view-flipper/";
-
+    public static final String BASE_URL = "https://modcom.co.ke/meditest/";
+    private StoreDatabase dbHelper;
     //adapterviewflipper object
     private AdapterViewFlipper adapterViewFlipper;
     @Override
@@ -47,6 +51,26 @@ public class NewHome extends AppCompatActivity {
         setContentView(R.layout.activity_new_home);
         //create/get prefs
         shared = getSharedPreferences("mediprefs", MODE_PRIVATE);
+
+        dbHelper = new StoreDatabase(getApplicationContext());
+        try {
+            dbHelper.open();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        int num = dbHelper.getCartItemsRowCount(true);
+
+
+        int amount = dbHelper.getAmount();
+
+
+        TextView numItemsBought = (TextView)findViewById(R.id.cart);
+        numItemsBought.setText(num+" item(s)");
+
+        TextView totalAmount = (TextView)findViewById(R.id.total);
+        totalAmount.setText("Total Amount: KES "+amount);
+
 
         layoutself  = findViewById(R.id.layoutself);
         layoutothers = findViewById(R.id.layoutothers);
@@ -93,18 +117,20 @@ public class NewHome extends AppCompatActivity {
         call.enqueue(new Callback<Heroes>() {
             @Override
             public void onResponse(Call<Heroes> call, Response<Heroes> response) {
+                if (response.isSuccessful()) {
+                    if (response.body() != null) {
+                        //getting list of heroes
+                        ArrayList<Hero> heros = response.body().getHeros();
 
-                //getting list of heroes
-                ArrayList<Hero> heros = response.body().getHeros();
+                        //creating adapter object
+                        FlipperAdapter adapter = new FlipperAdapter(getApplicationContext(), heros);
 
-                //creating adapter object
-                FlipperAdapter adapter = new FlipperAdapter(getApplicationContext(), heros);
-
-                //adding it to adapterview flipper
-                adapterViewFlipper.setAdapter(adapter);
-                adapterViewFlipper.setFlipInterval(5000);
-                adapterViewFlipper.startFlipping();
-            }
+                        //adding it to adapterview flipper
+                        adapterViewFlipper.setAdapter(adapter);
+                        adapterViewFlipper.setFlipInterval(5000);
+                        adapterViewFlipper.startFlipping();
+                    }
+                }}
 
             @Override
             public void onFailure(Call<Heroes> call, Throwable t) {

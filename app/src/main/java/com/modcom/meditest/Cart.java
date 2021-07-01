@@ -89,7 +89,7 @@ public class Cart extends AppCompatActivity {
 //        }
 
         TextView numItemsBought = (TextView)findViewById(R.id.cart);
-        numItemsBought.setText(num+" items");
+        numItemsBought.setText(num+" item(s)");
 
         TextView totalAmount = (TextView)findViewById(R.id.total);
         totalAmount.setText("Total Amount: KES "+amount);

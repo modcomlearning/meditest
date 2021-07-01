@@ -257,7 +257,7 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:clickable="true"
-            android:textColor="#3F51B5"
+            android:textColor="@color/medi_button"
             android:textStyle="bold"
             android:layout_marginBottom="24dp"
             android:text="Already a member? Login"

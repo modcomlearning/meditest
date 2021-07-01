@@ -14,6 +14,7 @@ import android.net.Uri;
 import android.os.Bundle;
 
 import com.google.android.material.appbar.CollapsingToolbarLayout;
+import com.google.android.material.chip.Chip;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.gson.JsonArray;
@@ -78,12 +79,13 @@ public class ConfirmBooking extends AppCompatActivity {
     private StoreDatabase dbHelper;
     EditText date, time;
     int mHour, mMinute;
-    Button selectDate, selectTime, book;
+    Chip selectDate, selectTime;
+    Button book;
     int[] myNum;
     ArrayList<Integer> arl;
     SharedPreferences.Editor editor;
     EditText book_phone, book_address;
-    Button location, upload;
+    Chip location, upload;
     TextView test_n, test_p;
     AlertDialog.Builder builder;
     String booking_id;
@@ -108,22 +110,22 @@ public class ConfirmBooking extends AppCompatActivity {
         location = findViewById(R.id.btnLocation);
 
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //go back on back arrow
-                Intent intent = new Intent(getApplicationContext(), Others.class);
-                //intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
-                startActivity(intent);
-                finish();
-            }
-        });
+//        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+//        setSupportActionBar(toolbar);
+////        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+//        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                //go back on back arrow
+//                Intent intent = new Intent(getApplicationContext(), Others.class);
+//                //intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+//                startActivity(intent);
+//                finish();
+//            }
+//        });
 
-        CollapsingToolbarLayout toolBarLayout = (CollapsingToolbarLayout) findViewById(R.id.toolbar_layout);
-        toolBarLayout.setTitle(getTitle());
+//        CollapsingToolbarLayout toolBarLayout = (CollapsingToolbarLayout) findViewById(R.id.toolbar_layout);
+//        toolBarLayout.setTitle(getTitle());
 
         //access sqlite to allow getting servcies stored in cart
         dbHelper = new StoreDatabase(getApplicationContext());
@@ -134,10 +136,10 @@ public class ConfirmBooking extends AppCompatActivity {
         }
 
         boolean self = shared.getBoolean("self", false);
-        TextView booking_id = findViewById(R.id.booking_id);
+        //TextView booking_id = findViewById(R.id.booking_id);
         TextView patient_name = findViewById(R.id.patient_name);
-        TextView patient_relationship = findViewById(R.id.patient_relationship);
-        TextView title_relationship = findViewById(R.id.title_relationship);
+        //TextView patient_relationship = findViewById(R.id.patient_relationship);
+        //TextView title_relationship = findViewById(R.id.title_relationship);
         TextView laboratory_tests = findViewById(R.id.laboratory_tests);
         selectDate = findViewById(R.id.btnDatebooking);
         selectTime = findViewById(R.id.btnTimebooking);
@@ -196,28 +198,30 @@ public class ConfirmBooking extends AppCompatActivity {
 
         //disable some textview depending if self/others
         if (self){
-            booking_id.setVisibility(View.GONE);
-            patient_relationship.setVisibility(View.GONE);
+            //booking_id.setVisibility(View.GONE);
+            //patient_relationship.setVisibility(View.GONE);
             patient_name.setText(first_name1+" "+last_name1);
-            title_relationship.setVisibility(View.GONE);
+            //title_relationship.setVisibility(View.GONE);
         }
 
         else {
-            title_relationship.setVisibility(View.VISIBLE);
-            booking_id.setVisibility(View.VISIBLE);
-            patient_relationship.setVisibility(View.VISIBLE);
+            //title_relationship.setVisibility(View.VISIBLE);
+            //booking_id.setVisibility(View.VISIBLE);
+            //patient_relationship.setVisibility(View.VISIBLE);
             patient_name.setText(first_name);
         }
 
         //DATA IS BEING STORED PERSISTENTLY ....  FROM THIOS CLASS PROCEED TO PAYMENT ACTIVITY
 
-        booking_id.setText(dependant_id);
+       // booking_id.setText(dependant_id);
 
-        patient_relationship.setText(relationship);
+        //patient_relationship.setText(relationship);
 
         int count = dbHelper.getTotalItemsCount();
         if (count < 1){
             laboratory_tests.setText("No Lab test available, please choose laboratory tests from the services list");
+            TextView txtlocset = findViewById(R.id.txtlocset);
+            txtlocset.setVisibility(View.GONE);
             selectDate.setVisibility(View.GONE);
             recyclerView.setVisibility(View.GONE);
             selectTime.setVisibility(View.GONE);
@@ -232,6 +236,8 @@ public class ConfirmBooking extends AppCompatActivity {
         }
 
         else {
+            TextView txtlocset = findViewById(R.id.txtlocset);
+            txtlocset.setVisibility(View.VISIBLE);
             book.setVisibility(View.VISIBLE);
             recyclerView.setVisibility(View.VISIBLE);
             selectDate.setVisibility(View.VISIBLE);

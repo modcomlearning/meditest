@@ -219,7 +219,7 @@
             android:layout_margin="4dp"
             app:cardUseCompatPadding="true"
             app:cardPreventCornerOverlap="true"
-            android:layout_height="170dp">
+            android:layout_height="150dp">
 
 
             <RelativeLayout

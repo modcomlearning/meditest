@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.ProgressDialog;
 import android.app.Service;
 import android.content.Intent;
+import android.content.IntentSender;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 
@@ -11,6 +12,12 @@ import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.google.android.material.circularreveal.cardview.CircularRevealCardView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
+import com.google.android.play.core.appupdate.AppUpdateInfo;
+import com.google.android.play.core.appupdate.AppUpdateManager;
+import com.google.android.play.core.appupdate.AppUpdateManagerFactory;
+import com.google.android.play.core.install.model.AppUpdateType;
+import com.google.android.play.core.install.model.UpdateAvailability;
+import com.google.android.play.core.tasks.Task;
 import com.google.gson.JsonObject;
 
 import androidx.annotation.NonNull;
@@ -46,15 +53,69 @@ CircularRevealCardView lab, pharmacy, consultation, homecare;
     String email_pref;
     String password_pref;
     SharedPreferences shared;
+    private static final int IMMEDIATE_APP_UPDATE_REQ_CODE = 124;
     //the base url
-    public static final String BASE_URL = "https://www.simplifiedcoding.net/demos/view-flipper/";
+    public static final String BASE_URL = "https://modcom.co.ke/meditest/";
 
     //adapterviewflipper object
     private AdapterViewFlipper adapterViewFlipper;
+    private AppUpdateManager appUpdateManager;
+
+
+    private void checkUpdate() {
+
+        Task<AppUpdateInfo> appUpdateInfoTask = appUpdateManager.getAppUpdateInfo();
+
+        appUpdateInfoTask.addOnSuccessListener(appUpdateInfo -> {
+            if (appUpdateInfo.updateAvailability() == UpdateAvailability.UPDATE_AVAILABLE
+                    && appUpdateInfo.isUpdateTypeAllowed(AppUpdateType.IMMEDIATE)) {
+                //Toast.makeText(this, "okay", Toast.LENGTH_SHORT).show();
+               startUpdateFlow(appUpdateInfo);
+            } else if (appUpdateInfo.updateAvailability() == UpdateAvailability.DEVELOPER_TRIGGERED_UPDATE_IN_PROGRESS){
+                startUpdateFlow(appUpdateInfo);
+                //Toast.makeText(this, "okay", Toast.LENGTH_SHORT).show();
+            }
+
+
+        });
+    }
+
+
+    private void startUpdateFlow(AppUpdateInfo appUpdateInfo) {
+        try {
+            appUpdateManager.startUpdateFlowForResult(appUpdateInfo, AppUpdateType.IMMEDIATE, this,
+                    123);
+        } catch (IntentSender.SendIntentException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == IMMEDIATE_APP_UPDATE_REQ_CODE) {
+            if (resultCode == RESULT_CANCELED) {
+                Toast.makeText(getApplicationContext(), "Update canceled by user! Result Code: " + resultCode, Toast.LENGTH_LONG).show();
+            } else if (resultCode == RESULT_OK) {
+                Toast.makeText(getApplicationContext(), "Update success! Result Code: " + resultCode, Toast.LENGTH_LONG).show();
+            } else {
+                Toast.makeText(getApplicationContext(), "Update Failed! Result Code: " + resultCode, Toast.LENGTH_LONG).show();
+                checkUpdate();
+            }
+        }
+    }
+
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_updated);
+
+
+        appUpdateManager = AppUpdateManagerFactory.create(getApplicationContext());
+        checkUpdate();
         shared = getSharedPreferences("mediprefs", MODE_PRIVATE);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -120,18 +181,20 @@ CircularRevealCardView lab, pharmacy, consultation, homecare;
         call.enqueue(new Callback<Heroes>() {
             @Override
             public void onResponse(Call<Heroes> call, Response<Heroes> response) {
+                if (response.isSuccessful()) {
+                    if (response.body() != null) {
+                        //getting list of heroes
+                        ArrayList<Hero> heros = response.body().getHeros();
 
-                //getting list of heroes
-                ArrayList<Hero> heros = response.body().getHeros();
+                        //creating adapter object
+                        FlipperAdapter adapter = new FlipperAdapter(getApplicationContext(), heros);
 
-                //creating adapter object
-                FlipperAdapter adapter = new FlipperAdapter(getApplicationContext(), heros);
-
-                //adding it to adapterview flipper
-                adapterViewFlipper.setAdapter(adapter);
-                adapterViewFlipper.setFlipInterval(5000);
-                adapterViewFlipper.startFlipping();
-            }
+                        //adding it to adapterview flipper
+                        adapterViewFlipper.setAdapter(adapter);
+                        adapterViewFlipper.setFlipInterval(5000);
+                        adapterViewFlipper.startFlipping();
+                    }
+                }}
 
             @Override
             public void onFailure(Call<Heroes> call, Throwable t) {

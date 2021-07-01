@@ -91,7 +91,7 @@
         <activity
             android:name=".ConfirmBooking"
             android:label="@string/title_activity_confirm_booking"
-            android:theme="@style/AppTheme.NoActionBar"
+            android:theme="@style/Theme.MedicalAppDesignModcom.NoActionBar"
             android:windowSoftInputMode="adjustPan" />
         <activity
             android:name=".AddDepandantsActivity"

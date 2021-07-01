@@ -46,11 +46,14 @@ public class FlipperAdapter extends BaseAdapter {
 
         LayoutInflater inflater = LayoutInflater.from(mCtx);
         View view = inflater.inflate(R.layout.flipper_items, null);
-        TextView textView = (TextView) view.findViewById(R.id.textView);
+        //TextView textView = (TextView) view.findViewById(R.id.textView);
         ImageView imageView = (ImageView) view.findViewById(R.id.imageView);
-        textView.setText(hero.getName());
+        //textView.setText(hero.getName());
 
-        Glide.with(mCtx).load(hero.getUrl()).into(imageView);
+        Glide.with(mCtx)
+                .load(hero.getUrl())
+                .fitCenter()
+                .into(imageView);
         return view;
     }
 }

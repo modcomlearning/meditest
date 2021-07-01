@@ -1,42 +1,310 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
     tools:context=".ConfirmBooking">
-
-    <com.google.android.material.appbar.AppBarLayout
-        android:id="@+id/app_bar"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/app_bar_height"
-        android:fitsSystemWindows="true"
-        android:background="@color/medi_button"
-        android:theme="@style/AppTheme.AppBarOverlay">
+        android:layout_height="wrap_content">
 
-        <com.google.android.material.appbar.CollapsingToolbarLayout
-            android:id="@+id/toolbar_layout"
+
+        <View
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:fitsSystemWindows="true"
-            app:contentScrim="@drawable/footer"
-            app:layout_scrollFlags="scroll|exitUntilCollapsed"
-            app:toolbarId="@+id/toolbar">
+            android:background="@color/purple_200"
+            android:layout_alignParentTop="true"
+            android:layout_height="200dp"/>
+        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+            android:layout_width="match_parent"
+            android:backgroundTint="@color/white"
+            app:cornerRadius="20dp"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp"
+            android:layout_marginStart="60dp"
+            android:layout_marginEnd="60dp"
+            android:gravity="center"
+            app:elevation="10dp"
+            android:textColor="@color/grey_600"
+            app:iconGravity="textStart"
+            app:iconTint="#605E5E"
+            android:id="@+id/btnconfirm"
+            android:text="Booking Information"
+            android:layout_marginTop="176dp"
+            android:layout_height="wrap_content"/>
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="wrap_content"
+            android:text="Patient Name"
+            android:layout_gravity="start"
+            android:layout_toRightOf="@+id/manimage"
+            android:layout_marginTop="90dp"
+            android:fontFamily="@font/calibri"
+            android:layout_alignParentTop="true"
+            android:textStyle="bold"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="20dp"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp" />
 
-            <androidx.appcompat.widget.Toolbar
-                android:id="@+id/toolbar"
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="wrap_content"
+            android:text="Trophy"
+            android:layout_gravity="start"
+            android:id="@+id/patient_name"
+            android:layout_toRightOf="@+id/manimage"
+            android:layout_marginTop="130dp"
+            android:fontFamily="@font/montserrat"
+            android:layout_alignParentTop="true"
+            android:textStyle="bold"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="20dp"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp" />
+
+
+
+        <ImageView
+            android:layout_width="90dp"
+            android:src="@drawable/man"
+            android:id="@+id/manimage"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="60dp"
+            android:layout_height="90dp"
+            android:layout_marginLeft="30dp" />
+
+
+
+
+                <LinearLayout
+                    android:id="@+id/chipholder"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_below="@id/btnconfirm"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:orientation="horizontal">
+
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/btnDatebooking"
+                    android:layout_width="wrap_content"
+                    android:layout_height="60dp"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:text="Select Date"
+                    app:chipEndPadding="10dp"
+                    app:chipIcon="@drawable/ic_baseline_calendar_today_24"
+                    app:chipStartPadding="10dp" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/btnTimebooking"
+                    android:layout_width="wrap_content"
+                    android:layout_height="60dp"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:text="Select Time"
+                    app:chipEndPadding="10dp"
+                    app:chipIcon="@drawable/ic_baseline_timer_24"
+                    app:chipStartPadding="10dp" />
+                </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:id="@+id/editholder"
+            android:layout_marginBottom="5dp"
+            android:layout_below="@+id/chipholder"
+            android:gravity="center_vertical|center_horizontal"
+            android:orientation="horizontal">
+            <EditText
+                android:id="@+id/tvSelectedDateBooking"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_weight="1"
+                android:layout_marginEnd="10dp"
+                android:enabled="false"
+                android:gravity="center"
+                android:textColor="#000000"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+
+            <EditText
+                android:id="@+id/tvSelectedTimeBooking"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginLeft="10dp"
+                android:layout_marginEnd="10dp"
+                android:textColor="#000000"
+                android:gravity="center"
+                android:textSize="15sp"
+                android:enabled="false"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:id="@+id/txtlocset"
+            android:textColor="#4CAF50"
+            android:layout_below="@id/editholder"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:text="" />
+
+        <LinearLayout
+            android:id="@+id/chipholder2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_below="@id/txtlocset"
+            android:gravity="center_vertical|center_horizontal"
+            android:orientation="horizontal">
+
+        <com.google.android.material.chip.Chip
+            android:paddingTop="10dp"
+            app:chipStartPadding="10dp"
+            android:id="@+id/btnUploadPres"
+            android:paddingBottom="10dp"
+            app:chipEndPadding="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:text="Upload Prescription"/>
+
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/btnLocation"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            app:chipIcon="@drawable/ic_baseline_add_location_alt_24"
+            app:chipEndPadding="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:text="Add A Location"/>
+
+        </LinearLayout>
+
+
+        <com.google.android.material.circularreveal.CircularRevealLinearLayout
+            android:layout_width="match_parent"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical"
+            android:layout_below="@id/chipholder2"
+            android:layout_height="wrap_content">
+
+
+                <TableRow
+                    android:paddingTop="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="7dp"
+                    android:layout_marginRight="7dp"
+                    android:layout_weight="1">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_weight=".7"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Lab Tests"
+                        android:gravity="left"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginRight="4dp"
+                        android:background="#c5c5c5" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_weight=".3"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="left"
+                        android:text="Price(KES)"
+                        android:layout_marginRight="4dp"
+                        android:background="#c5c5c5" />
+                </TableRow>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/recycler"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    />
+
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/laboratory_tests"
                 android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
-                app:layout_collapseMode="pin"
-                android:background="@color/medi_button"
-                app:popupTheme="@style/AppTheme.PopupOverlay" />
-
-        </com.google.android.material.appbar.CollapsingToolbarLayout>
-    </com.google.android.material.appbar.AppBarLayout>
-
-    <include layout="@layout/content_booking" />
-
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:layout_marginLeft="10dp"
+                android:textStyle="bold"
+                android:textColor="#FF5722"
+                android:layout_marginRight="15dp"
+                android:layout_marginBottom="10dp"
+                android:text="" />
 
 
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+
+
+
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat"
+                    android:hint="Phone number 2547xxx"
+                    android:focusable="true"
+                    android:id="@+id/book_phone"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:inputType="phone" />
+
+
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat"
+                    android:hint="Location descripion  i.e house no, street building"
+                    android:lines="4"
+                    android:id="@+id/book_address"
+                    android:gravity="start"
+                    android:inputType="textMultiLine"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    />
+
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:textSize="15dp"
+                android:text="CONFIRM BOOKING"
+                android:background="@drawable/bg_select"
+                android:textStyle="bold"
+                android:padding="10dp"
+                android:layout_marginBottom="10dp"
+                android:textColor="#fff"
+                android:id="@+id/book" />
+
+        </com.google.android.material.circularreveal.CircularRevealLinearLayout>
+
+    </RelativeLayout>
+
+</ScrollView>

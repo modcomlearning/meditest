@@ -21,7 +21,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class FlipperMain extends AppCompatActivity {
 
     //the base url
-    public static final String BASE_URL = "https://www.simplifiedcoding.net/demos/view-flipper/";
+    public static final String BASE_URL = "https://modcom.co.ke/meditest/";
 
     //adapterviewflipper object
     private AdapterViewFlipper adapterViewFlipper;

@@ -10,8 +10,7 @@ import java.util.ArrayList;
 
 public class Heroes {
 
-
-    @SerializedName("heroes")
+    @SerializedName("offers")
     private ArrayList<Hero> heros;
 
     public Heroes(){

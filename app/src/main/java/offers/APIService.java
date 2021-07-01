@@ -9,6 +9,6 @@ import retrofit2.http.GET;
 
 public interface APIService {
 
-    @GET("heroes.php")
+    @GET("offer.php")
     Call<Heroes> getHeroes();
 }

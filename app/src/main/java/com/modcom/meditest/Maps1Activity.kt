@@ -549,7 +549,7 @@ class Maps1Activity() : FragmentActivity(), OnMapReadyCallback, LocationListener
 
                     //performing positive action
                     builder.setPositiveButton("OK"){dialogInterface, which ->
-                        finish()
+                        //finish()
                         // Toast.makeText(applicationContext,"Location Captured",Toast.LENGTH_SHORT).show()
                     }
 
@@ -558,7 +558,7 @@ class Maps1Activity() : FragmentActivity(), OnMapReadyCallback, LocationListener
                     // Set other dialog properties
                     alertDialog.setCancelable(false)
                     alertDialog.show()
-                    finish()
+
                 }
             }
         }
