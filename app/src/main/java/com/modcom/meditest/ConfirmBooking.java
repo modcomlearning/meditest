@@ -143,16 +143,16 @@ public class ConfirmBooking extends AppCompatActivity {
         TextView laboratory_tests = findViewById(R.id.laboratory_tests);
         selectDate = findViewById(R.id.btnDatebooking);
         selectTime = findViewById(R.id.btnTimebooking);
-        date = findViewById(R.id.tvSelectedDateBooking);
-        time = findViewById(R.id.tvSelectedTimeBooking);
+//        date = findViewById(R.id.tvSelectedDateBooking);
+//        time = findViewById(R.id.tvSelectedTimeBooking);
         book = findViewById(R.id.book);
         book.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
             //here we post all data for booking
 
-                String date_select = date.getText().toString();
-                String time_select = time.getText().toString();
+                String date_select = selectDate.getText().toString();
+                String time_select = selectTime.getText().toString();
                 String phone_select = book_phone.getText().toString();
                 String book_select = book_address.getText().toString();
                 String book_address1 = book_address.getText().toString();
@@ -225,8 +225,8 @@ public class ConfirmBooking extends AppCompatActivity {
             selectDate.setVisibility(View.GONE);
             recyclerView.setVisibility(View.GONE);
             selectTime.setVisibility(View.GONE);
-            time.setVisibility(View.GONE);
-            date.setVisibility(View.GONE);
+//            time.setVisibility(View.GONE);
+//            date.setVisibility(View.GONE);
             book.setVisibility(View.GONE);
             location.setVisibility(View.GONE);
             book_phone.setVisibility(View.GONE);
@@ -242,8 +242,8 @@ public class ConfirmBooking extends AppCompatActivity {
             recyclerView.setVisibility(View.VISIBLE);
             selectDate.setVisibility(View.VISIBLE);
             selectTime.setVisibility(View.VISIBLE);
-            time.setVisibility(View.VISIBLE);
-            date.setVisibility(View.VISIBLE);
+//            time.setVisibility(View.VISIBLE);
+//            date.setVisibility(View.VISIBLE);
             location.setVisibility(View.VISIBLE);
             book_phone.setVisibility(View.VISIBLE);
             book_address.setVisibility(View.VISIBLE);
@@ -310,7 +310,7 @@ public class ConfirmBooking extends AppCompatActivity {
                                         formattedDayOfMonth = "0" + day;
                                     }
 
-                                    date.setText(year + "-" + (formattedMonth) + "-" + formattedDayOfMonth);
+                                    selectDate.setText(year + "-" + (formattedMonth) + "-" + formattedDayOfMonth);
                                 }
                             }, year, month, dayOfMonth);
                     datePickerDialog.getDatePicker().setMinDate(System.currentTimeMillis());
@@ -345,7 +345,7 @@ public class ConfirmBooking extends AppCompatActivity {
                                         newhour =  "0"+ hourOfDay;
                                     }
 
-                                    time.setText(newhour + ":" + newtime);
+                                    selectTime.setText(newhour + ":" + newtime);
                                 }
                             }, mHour, mMinute, false);
 
@@ -423,6 +423,7 @@ public class ConfirmBooking extends AppCompatActivity {
         if(requestCode==1)
         {
             Toast.makeText(this, "Photo Captured", Toast.LENGTH_LONG).show();
+
         }
 
         if(requestCode==2)
@@ -654,18 +655,5 @@ public class ConfirmBooking extends AppCompatActivity {
         }
     }
 
-    @Override
-    protected void onResume() {
-        super.onResume();
-        TextView txtlocset = findViewById(R.id.txtlocset);
-        String lat = shared.getString("lat", "");
-        String lon = shared.getString("lon", "");
-        if (lat.length()==0 || lon.length() ==0){
-            txtlocset.setText("Location Not Specified, Click button below");
-        }
 
-        else {
-            txtlocset.setText("Previous Location Specified, Click button to change");
-        }
-    }
 }

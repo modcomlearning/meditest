@@ -48,6 +48,8 @@ import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit_api.IRetrofit;
 import services.ServiceGenerator;
 
+import static com.google.android.play.core.install.model.AppUpdateType.IMMEDIATE;
+
 public class Updated extends AppCompatActivity {
 CircularRevealCardView lab, pharmacy, consultation, homecare;
     String email_pref;
@@ -68,11 +70,12 @@ CircularRevealCardView lab, pharmacy, consultation, homecare;
 
         appUpdateInfoTask.addOnSuccessListener(appUpdateInfo -> {
             if (appUpdateInfo.updateAvailability() == UpdateAvailability.UPDATE_AVAILABLE
-                    && appUpdateInfo.isUpdateTypeAllowed(AppUpdateType.IMMEDIATE)) {
-                //Toast.makeText(this, "okay", Toast.LENGTH_SHORT).show();
+                    && appUpdateInfo.isUpdateTypeAllowed(IMMEDIATE)) {
+                //Toast.makeText(this, "Update available", Toast.LENGTH_SHORT).show();
                startUpdateFlow(appUpdateInfo);
             } else if (appUpdateInfo.updateAvailability() == UpdateAvailability.DEVELOPER_TRIGGERED_UPDATE_IN_PROGRESS){
                 startUpdateFlow(appUpdateInfo);
+                //Toast.makeText(this, "Update available", Toast.LENGTH_SHORT).show();
                 //Toast.makeText(this, "okay", Toast.LENGTH_SHORT).show();
             }
 
@@ -83,8 +86,8 @@ CircularRevealCardView lab, pharmacy, consultation, homecare;
 
     private void startUpdateFlow(AppUpdateInfo appUpdateInfo) {
         try {
-            appUpdateManager.startUpdateFlowForResult(appUpdateInfo, AppUpdateType.IMMEDIATE, this,
-                    123);
+            appUpdateManager.startUpdateFlowForResult(appUpdateInfo, IMMEDIATE, this,
+                    IMMEDIATE_APP_UPDATE_REQ_CODE);
         } catch (IntentSender.SendIntentException e) {
             e.printStackTrace();
         }
@@ -106,6 +109,8 @@ CircularRevealCardView lab, pharmacy, consultation, homecare;
     }
 
 
+    // Checks that the update is not stalled during 'onResume()'.
+// However, you should execute this check at all entry points into the app.
 
 
     @Override

@@ -32,6 +32,7 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.Marker
 import com.google.android.gms.maps.model.MarkerOptions
+import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_maps1.*
 import java.io.IOException
 
@@ -123,7 +124,8 @@ class Maps1Activity() : FragmentActivity(), OnMapReadyCallback, LocationListener
                         //editor.putString("sub_admin_area", address.subAdminArea.toString())
                         editor.apply()
                         onBackPressed()
-                        Toast.makeText(applicationContext,"Location Captured",Toast.LENGTH_SHORT).show()
+                        Toast.makeText(applicationContext,"Location Captured",Toast.LENGTH_LONG).show()
+
 
                     }
                     //performing negative action

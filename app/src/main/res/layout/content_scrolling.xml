@@ -163,6 +163,7 @@
            android:layout_marginRight="10dp"
            android:text="SELECT THIS TEST"
            android:textColor="#fff"
+           android:layout_marginBottom="5dp"
            android:layout_gravity="center"
            android:background = "@drawable/bg_select"
            android:id="@+id/buy" />

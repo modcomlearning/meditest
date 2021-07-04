@@ -21,25 +21,27 @@
             android:gravity="center_vertical|center_horizontal"
             android:orientation="horizontal">
 
-            <TextView
+            <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/txt_status1"
                 android:layout_width="116dp"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="20dp"
                 android:layout_weight="1"
+                android:fontFamily="@font/montserrat"
                 android:gravity="right"
                 android:text="Status"
-                android:textSize="16sp"
+                android:textSize="14sp"
                 android:textStyle="bold" />
-            <TextView
+            <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/txt_status"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="left"
                 android:textColor="#4CAF50"
+                android:fontFamily="@font/montserrat"
                 android:layout_weight="1"
                 android:layout_marginRight="20dp"
-                android:textSize="16sp"
+                android:textSize="14sp"
                 android:textStyle="bold"
                 android:text=""
                 />
@@ -51,7 +53,7 @@
             android:layout_height="fill_parent"
             android:orientation="horizontal">
 
-            <TextView
+            <com.google.android.material.textview.MaterialTextView
                 android:textColor="@color/white"
                 android:id="@+id/view_phlebo_location"
                 android:layout_width="wrap_content"
@@ -61,9 +63,9 @@
                 android:textStyle="bold"
                 android:padding="3dp"
                 android:background="@drawable/bg_rounded1"
-                android:textSize="18sp"
+                android:textSize="15sp"
                 android:layout_marginTop="20dp"
-                android:text="View Phlebo Location"
+                android:text="Phlebo Location"
                 />
         </LinearLayout>
 
@@ -74,10 +76,11 @@
             android:layout_height="fill_parent"
             android:orientation="horizontal">
 
-            <TextView
+            <com.google.android.material.textview.MaterialTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="18dp"
+                android:textSize="15dp"
+                android:fontFamily="@font/montserrat"
                 android:textColor="@color/colorMed"
                 android:layout_marginTop="18dp"
                 android:textStyle="bold"
@@ -92,19 +95,21 @@
             android:layout_marginTop="10dp"
             android:orientation="horizontal">
 
-            <TextView
+            <com.google.android.material.textview.MaterialTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="left"
+                android:fontFamily="@font/montserrat"
                 android:textStyle="bold"
                 android:text="Full Names"
                 />
 
-            <TextView
+            <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/txt_phlebo_first_name"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:gravity="center"
+                android:fontFamily="@font/montserrat"
                 android:textAlignment="center"
                 android:layout_weight="1"
                 android:textStyle="bold"
@@ -120,20 +125,22 @@
             android:layout_marginTop="10dp"
             android:orientation="horizontal">
 
-            <TextView
+            <com.google.android.material.textview.MaterialTextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:gravity="left"
+                android:fontFamily="@font/montserrat"
                 android:layout_weight="1"
                 android:textStyle="bold"
                 android:text="Gender"
                 />
 
-            <TextView
+            <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/txt_phlebo_gender"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:gravity="left"
+                android:fontFamily="@font/montserrat"
                 android:layout_weight="1"
                 android:textStyle="bold"
                 android:text=""
@@ -155,11 +162,12 @@
                 android:text="Qualifications"
                 />
 
-            <TextView
+            <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/txt_phlebo_qualifications"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:gravity="left"
+                android:fontFamily="@font/montserrat"
                 android:layout_weight="1"
                 android:textStyle="bold"
                 android:text=""
@@ -174,20 +182,22 @@
             android:layout_marginTop="10dp"
             android:orientation="horizontal">
 
-            <TextView
+            <com.google.android.material.textview.MaterialTextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:gravity="left"
+                android:fontFamily="@font/montserrat"
                 android:layout_weight="1"
                 android:textStyle="bold"
                 android:text="Phone"
                 />
 
-            <TextView
+            <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/txt_phlebo_phone"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:gravity="left"
+                android:fontFamily="@font/montserrat"
                 android:layout_weight="1"
                 android:textStyle="bold"
                 android:text=""

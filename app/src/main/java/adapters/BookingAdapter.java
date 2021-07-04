@@ -79,7 +79,7 @@ public class BookingAdapter extends RecyclerView.Adapter<BookingAdapter.MyViewHo
         else if(contactListFiltered.get(position).getPaid().equalsIgnoreCase("0")) {
             holder.txt_paid.setText("Cash on Collection");
             holder.txt_total_amount.setText("Total. Ksh "+contactListFiltered.get(position).getTotal_amount());
-            holder.txt_paid.setBackgroundColor(Color.parseColor("#FF5722"));
+            holder.txt_paid.setBackgroundColor(Color.parseColor("#F44236"));
         }
 
         //holder.txt_total_amount.setText("Total. Ksh "+contactListFiltered.get(position).getTotal_amount());

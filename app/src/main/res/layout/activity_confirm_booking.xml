@@ -114,54 +114,20 @@
                 </LinearLayout>
 
 
-        <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:id="@+id/editholder"
-            android:layout_marginBottom="5dp"
-            android:layout_below="@+id/chipholder"
-            android:gravity="center_vertical|center_horizontal"
-            android:orientation="horizontal">
-            <EditText
-                android:id="@+id/tvSelectedDateBooking"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="15dp"
-                android:layout_weight="1"
-                android:layout_marginEnd="10dp"
-                android:enabled="false"
-                android:gravity="center"
-                android:textColor="#000000"
-                android:textSize="15sp"
-                android:textStyle="bold" />
 
-
-            <EditText
-                android:id="@+id/tvSelectedTimeBooking"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:layout_marginLeft="10dp"
-                android:layout_marginEnd="10dp"
-                android:textColor="#000000"
-                android:gravity="center"
-                android:textSize="15sp"
-                android:enabled="false"
-                android:textStyle="bold" />
-
-        </LinearLayout>
 
         <com.google.android.material.textview.MaterialTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textStyle="bold"
+            android:gravity="right"
             android:id="@+id/txtlocset"
+            android:layout_marginRight="5dp"
             android:textColor="#4CAF50"
-            android:layout_below="@id/editholder"
-            android:layout_marginTop="10dp"
+            android:layout_below="@id/chipholder"
+            android:layout_marginTop="15dp"
             android:layout_marginLeft="10dp"
-            android:text="" />
+            android:text="Click Button to Add Location" />
 
         <LinearLayout
             android:id="@+id/chipholder2"

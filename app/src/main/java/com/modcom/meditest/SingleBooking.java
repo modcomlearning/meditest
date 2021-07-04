@@ -15,6 +15,8 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.material.chip.Chip;
+
 import org.jetbrains.annotations.NotNull;
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -49,7 +51,7 @@ public class SingleBooking extends AppCompatActivity {
     TextView txt_exact_location, view_phlebo, txt_total_amount;
     LinearLayout linearLayout;
     SharedPreferences shared;
-    Button btn_pay_now;
+    Chip btn_pay_now;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -12,8 +12,8 @@ android {
         applicationId "com.modcom.meditest"
         minSdkVersion 17
         targetSdkVersion 30
-        versionCode 6
-        versionName "6"
+        versionCode 10
+        versionName "9.1"
         multiDexEnabled true
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -92,3 +92,4 @@ dependencies {
 
     implementation "androidx.multidex:multidex:2.0.1"
 }
+

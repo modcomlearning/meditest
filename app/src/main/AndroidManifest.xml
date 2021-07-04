@@ -136,6 +136,7 @@
                 <action android:name="android.intent.action.SEARCH" />
             </intent-filter>
         </activity>
+
     </application>
 
 </manifest>
