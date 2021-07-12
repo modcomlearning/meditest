@@ -7,14 +7,27 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".TestDescActivity"
     tools:showIn="@layout/activity_test_desc">
-
-
+    <com.google.android.material.circularreveal.CircularRevealLinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_marginStart="0dp"
+        android:layout_marginEnd="0dp"
+        android:layout_height="match_parent">
+        <View
+            android:layout_width="match_parent"
+            android:background="@drawable/header"
+            android:orientation="vertical"
+            android:layout_gravity="bottom"
+            android:gravity="bottom"
+            android:layout_height="90dp">
+        </View>
 
   <LinearLayout
          android:id="@+id/linearLayout"
          android:layout_width="match_parent"
          android:orientation="vertical"
          android:layout_height="match_parent">
+
 
          <com.google.android.material.textview.MaterialTextView
              android:id="@+id/info_head"
@@ -24,8 +37,7 @@
              android:textStyle="bold"
              android:layout_marginLeft="10dp"
              android:layout_marginBottom="10dp"
-             android:textColor="#FF5722"
-             android:text="Test Information" />
+             android:text="" />
 
 
        <com.google.android.material.textview.MaterialTextView
@@ -52,7 +64,7 @@
              android:layout_width="match_parent"
              android:layout_height="wrap_content"
              android:textStyle="bold"
-             android:textColor="#FF5722"
+             android:fontFamily="@font/montserrat"
              android:layout_marginLeft="10dp"
              android:text="Test Constituents" />
 
@@ -62,6 +74,7 @@
            android:fontFamily="@font/montserrat"
            android:layout_height="wrap_content"
            android:layout_marginLeft="10dp"
+
            android:layout_marginBottom="10dp"
            android:text="" />
 
@@ -71,8 +84,8 @@
              android:layout_width="match_parent"
              android:layout_height="wrap_content"
              android:textStyle="bold"
+           android:fontFamily="@font/montserrat"
              android:layout_marginLeft="10dp"
-           android:textColor="#FF5722"
              android:text="Test Category" />
 
          <com.google.android.material.textview.MaterialTextView
@@ -92,7 +105,7 @@
              android:layout_height="wrap_content"
              android:textStyle="bold"
              android:layout_marginLeft="10dp"
-             android:textColor="#FF5722"
+             android:fontFamily="@font/montserrat"
              android:text="Test Prerequisites" />
 
 
@@ -111,6 +124,7 @@
              android:layout_width="match_parent"
              android:layout_height="wrap_content"
              android:textStyle="bold"
+             android:fontFamily="@font/montserrat"
              android:layout_marginLeft="10dp"
              android:text="Report Availability" />
 
@@ -129,6 +143,7 @@
              android:layout_width="match_parent"
              android:layout_height="wrap_content"
              android:textStyle="bold"
+             android:fontFamily="@font/montserrat"
              android:layout_marginLeft="10dp"
              android:text="Price(KES)" />
 
@@ -167,8 +182,10 @@
            android:layout_gravity="center"
            android:background = "@drawable/bg_select"
            android:id="@+id/buy" />
+  </LinearLayout>
+      </com.google.android.material.circularreveal.CircularRevealLinearLayout>
 
-     </LinearLayout>
+
 
 
 </androidx.core.widget.NestedScrollView>

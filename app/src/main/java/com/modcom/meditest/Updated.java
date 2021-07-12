@@ -71,15 +71,10 @@ CircularRevealCardView lab, pharmacy, consultation, homecare;
         appUpdateInfoTask.addOnSuccessListener(appUpdateInfo -> {
             if (appUpdateInfo.updateAvailability() == UpdateAvailability.UPDATE_AVAILABLE
                     && appUpdateInfo.isUpdateTypeAllowed(IMMEDIATE)) {
-                //Toast.makeText(this, "Update available", Toast.LENGTH_SHORT).show();
                startUpdateFlow(appUpdateInfo);
             } else if (appUpdateInfo.updateAvailability() == UpdateAvailability.DEVELOPER_TRIGGERED_UPDATE_IN_PROGRESS){
                 startUpdateFlow(appUpdateInfo);
-                //Toast.makeText(this, "Update available", Toast.LENGTH_SHORT).show();
-                //Toast.makeText(this, "okay", Toast.LENGTH_SHORT).show();
             }
-
-
         });
     }
 
@@ -255,6 +250,7 @@ CircularRevealCardView lab, pharmacy, consultation, homecare;
         shared = getSharedPreferences("mediprefs", MODE_PRIVATE);
         email_pref = shared.getString("email","");
         password_pref = shared.getString("password","");
+
     }
 
     public void onPostClicked(String email_input, String password_input, Activity context) {

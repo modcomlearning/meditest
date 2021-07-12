@@ -231,13 +231,15 @@
             android:text="Select DOB"
              />
 
-        <EditText
+        <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/tvSelectedDate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+            android:layout_gravity="center"
+            app:fontFamily="@font/montserrat"
             android:textColor="#000000"
-            android:textSize="20sp"
+            android:textSize="15sp"
             android:textStyle="bold" />
 
 
@@ -253,16 +255,30 @@
             android:textColor="@android:color/white"
             android:text="Create Account"/>
 
-        <TextView android:id="@+id/link_login"
+
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="match_parent"
+            android:text="Or"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:fontFamily="@font/montserrat"
+            android:layout_height="wrap_content"/>
+
+
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/link_login"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:clickable="true"
-            android:textColor="@color/medi_button"
             android:textStyle="bold"
+            android:textColor="@color/purple_200"
+            app:fontFamily="@font/montserrat"
             android:layout_marginBottom="24dp"
             android:text="Already a member? Login"
             android:gravity="center"
-            android:textSize="17dip"/>
+            android:textSize="17dp"/>
 
     </LinearLayout>
 </ScrollView>

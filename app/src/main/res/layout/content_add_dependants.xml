@@ -3,6 +3,7 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".TestDescActivity"
     android:fitsSystemWindows="true">
 
@@ -13,7 +14,6 @@
         android:paddingTop="56dp"
         android:paddingLeft="24dp"
         android:paddingRight="24dp">
-
 
         <!--  Name Label -->
         <com.google.android.material.textfield.TextInputLayout
@@ -168,13 +168,15 @@
             android:text="Select DOB"
             />
 
-        <EditText
+        <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/dep_tvSelectedDate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+            android:layout_gravity="center"
+            app:fontFamily="@font/montserrat"
             android:textColor="#000000"
-            android:textSize="20sp"
+            android:textSize="15sp"
             android:textStyle="bold" />
 
 
