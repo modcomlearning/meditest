@@ -26,6 +26,7 @@ import adapters.RetrofitAdapter;
 import helpers.StoreDatabase;
 import models.ModelRecycler;
 import okhttp3.OkHttpClient;
+import okhttp3.Protocol;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -43,6 +44,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.app.SearchManager;
 import android.content.Context;
+
+import static com.google.android.gms.common.util.CollectionUtils.listOf;
 
 public class ServicesPage extends AppCompatActivity {
     private EditText etsearch;
@@ -114,10 +117,10 @@ public class ServicesPage extends AppCompatActivity {
             dialog.show();
 
             OkHttpClient okHttpClient = new OkHttpClient.Builder()
-                    .connectTimeout(8, TimeUnit.SECONDS)
-                    .callTimeout(8, TimeUnit.SECONDS)
-                    .readTimeout(8, TimeUnit.SECONDS)
-                    .writeTimeout(8, TimeUnit.SECONDS)
+                    .connectTimeout(30, TimeUnit.SECONDS)
+                    .callTimeout(30, TimeUnit.SECONDS)
+                    .readTimeout(30, TimeUnit.SECONDS)
+                    .writeTimeout(30, TimeUnit.SECONDS)
                     .build();
 
             Retrofit retrofit = new Retrofit.Builder()
@@ -180,7 +183,7 @@ public class ServicesPage extends AppCompatActivity {
                 public void onFailure(Call<String> call, Throwable t) {
                     dialog.dismiss();
                     //Log.d("error", t.getMessage());
-                    Toast.makeText(ServicesPage.this, "There was a server error, check your internet & try again", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ServicesPage.this, "Ty again"+call.toString(), Toast.LENGTH_SHORT).show();
 
                     startActivity(new Intent(getApplicationContext(), Updated.class));
                     finish();

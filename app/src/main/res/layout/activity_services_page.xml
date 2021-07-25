@@ -13,9 +13,9 @@
         android:text="@string/thanks"
         android:gravity="center"
         android:textStyle="bold"
-        android:textSize="20sp"
-        android:layout_marginTop="20dp"
-        android:layout_margin="@dimen/activity_horizontal_margin"
+        android:textSize="15sp"
+        android:layout_marginTop="15dp"
+        android:layout_margin="10dp"
         android:textColor="#000000"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:id="@+id/textView2" />

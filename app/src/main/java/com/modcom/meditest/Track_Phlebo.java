@@ -448,10 +448,10 @@ public class Track_Phlebo extends AppCompatActivity implements OnMapReadyCallbac
                             .build();
                     return chain.proceed(newRequest);
                 }
-            }).connectTimeout(7, TimeUnit.SECONDS)
-                    .callTimeout(7, TimeUnit.SECONDS)
-                    .readTimeout(7, TimeUnit.SECONDS)
-                    .writeTimeout(7, TimeUnit.SECONDS)
+            }).connectTimeout(30, TimeUnit.SECONDS)
+                    .callTimeout(30, TimeUnit.SECONDS)
+                    .readTimeout(30, TimeUnit.SECONDS)
+                    .writeTimeout(30, TimeUnit.SECONDS)
                     .build();
 
             Retrofit retrofit = new Retrofit.Builder()

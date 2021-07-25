@@ -52,10 +52,10 @@ public class ServiceGenerator {
             return chain.proceed(newRequest);
         }
     })
-            .connectTimeout(8, TimeUnit.SECONDS)
-            .callTimeout(8, TimeUnit.SECONDS)
-            .readTimeout(8, TimeUnit.SECONDS)
-            .writeTimeout(8, TimeUnit.SECONDS)
+            .connectTimeout(30, TimeUnit.SECONDS)
+            .callTimeout(30, TimeUnit.SECONDS)
+            .readTimeout(30, TimeUnit.SECONDS)
+            .writeTimeout(30, TimeUnit.SECONDS)
             .build();
 
 

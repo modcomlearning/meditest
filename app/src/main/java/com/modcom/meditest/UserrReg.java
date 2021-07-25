@@ -289,7 +289,7 @@ public class UserrReg extends AppCompatActivity {
                     //Toast.makeText(UserLogin.this, "Server Error, Check Your internet Connection and try again", Toast.LENGTH_LONG).show();
                     dialog.dismiss();
                     AlertDialog alert = new AlertDialog.Builder(UserrReg.this)
-                            .setTitle("Please Check Your Network connections. Try Again")
+                            .setTitle("Please Check Your Network connections. Try Again"+t.getMessage())
                             .setPositiveButton("Ok",
                                     new DialogInterface.OnClickListener() {
                                         public void onClick(DialogInterface dialog,

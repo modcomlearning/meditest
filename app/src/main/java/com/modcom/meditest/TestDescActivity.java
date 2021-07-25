@@ -117,10 +117,10 @@ LinearLayout linearLayout;
 
 
         OkHttpClient okHttpClient = new OkHttpClient.Builder()
-                .callTimeout(6, TimeUnit.SECONDS)
-                .connectTimeout(6, TimeUnit.SECONDS)
-                .readTimeout(6, TimeUnit.SECONDS)
-                .writeTimeout(6, TimeUnit.SECONDS)
+                .callTimeout(30, TimeUnit.SECONDS)
+                .connectTimeout(30, TimeUnit.SECONDS)
+                .readTimeout(30, TimeUnit.SECONDS)
+                .writeTimeout(30, TimeUnit.SECONDS)
                 .build();
 
 
